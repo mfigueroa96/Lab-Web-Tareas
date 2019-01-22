@@ -1,10 +1,67 @@
-body {
-    color: blue;
-  }
-
 @import "@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+@import "@material/typography/mdc-typography";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+h2 {
+    color: white;
+}
+
+html {
+    background: linear-gradient(rgb(1, 168, 168), rgb(0, 125, 125));
+    height: 100%;
+}
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    > * {
+        padding: 20px;
+        flex: 1;
+    }
+
+    .login-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup-container {
+        display: flex;
+    }
+}
+
+.login-content {
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.signup-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    flex: 1;
+    padding: 20px;
+}
 
 .foo-button {
-  @include mdc-button-ink-color(teal);
-  @include mdc-states(teal);
+    @include mdc-button-ink-color(teal);
+    @include mdc-states(teal);
+}
+
+.foo-textfield {
+    @include mdc-text-field-ink-color(black);
+    @include mdc-states(rgb(1, 96, 96));
+    display: block;
+    margin-bottom: 10px;
 }

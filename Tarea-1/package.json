@@ -13,6 +13,7 @@
     "@material/checkbox": "^0.43.0",
     "@material/chips": "^0.43.0",
     "@material/textfield": "^0.43.0",
+    "@material/typography": "^0.43.0",
     "autoprefixer": "^9.4.6",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
