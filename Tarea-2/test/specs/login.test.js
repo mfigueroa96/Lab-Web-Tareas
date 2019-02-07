@@ -2,7 +2,7 @@ var assert = require('assert');
 
 describe('Login', () => {
     before(() => {
-        console.log('Signup test running...');
+        console.log('Signin test running...');
     });
 
     it('Successfull Login', () => {
@@ -18,6 +18,6 @@ describe('Login', () => {
     });
 
     after(() => {
-        console.log('Signup test ending...');
+        console.log('Signin test ending...');
     });
 });
