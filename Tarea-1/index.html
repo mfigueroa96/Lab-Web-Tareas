@@ -12,22 +12,25 @@
             <div class="login-container">
                 <div class="login-content">
                     <h1 class="mdc-typography--headline4">¿Ya tenés cuenta?</h1>
-                    <div class="foo-textfield mdc-text-field">
-                        <input type="text" id="username-field" class="mdc-text-field__input">
-                        <label class="mdc-floating-label" for="my-text-field">Nombre de usuario</label>
-                        <div class="mdc-line-ripple"></div>
-                    </div>
-                    <div class="foo-textfield mdc-text-field password-field">
-                            <input type="password" id="password-field" class="mdc-text-field__input">
-                            <label class="mdc-floating-label" for="my-text-field">Contraseña</label>
+                    <form action="./main.html">
+                        <div class="foo-textfield mdc-text-field">
+                            <input type="text" id="username-field" class="mdc-text-field__input">
+                            <label class="mdc-floating-label" for="my-text-field">Nombre de usuario</label>
                             <div class="mdc-line-ripple"></div>
                         </div>
-                    <button class="foo-button mdc-button">
-                        INICIÁ SESIÓN
-                    </button>
+                        <div class="foo-textfield mdc-text-field password-field">
+                                <input type="password" id="password-field" class="mdc-text-field__input">
+                                <label class="mdc-floating-label" for="my-text-field">Contraseña</label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                        <button id="login-btn" class="foo-button mdc-button">
+                            INICIÁ SESIÓN
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="signup-container">
+                <form action="./main.html">
                 <div class="signup-content">
                     <h1 class="mdc-typography--headline4">¿Sos nuevo?</h1>
                     <h2 class="mdc-typography--headline5">Datos Personales</h2>
@@ -63,14 +66,14 @@
                         <div class="multi-row">
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field register-username-field">
-                                    <input type="email" class="mdc-text-field__input">
+                                    <input type="text" id="new-username-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Nombre de usuario</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
                             </div>
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field register-password-field">
-                                    <input type="password" class="mdc-text-field__input">
+                                    <input type="password" id="new-password-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Contraseña</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
@@ -82,7 +85,7 @@
                         <div class="multi-row">
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field address-field">
-                                    <input type="text" class="mdc-text-field__input">
+                                    <input type="text" id="address-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Dirección</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
@@ -91,14 +94,14 @@
                         <div class="multi-row">
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field hood-field">
-                                    <input type="text" class="mdc-text-field__input">
+                                    <input type="text" id="barrio-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Barrio o Colonia</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
                             </div>
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field cp-field">
-                                    <input type="number" class="mdc-text-field__input" min="1">
+                                    <input type="number" id="cp-field" class="mdc-text-field__input" min="1">
                                     <label class="mdc-floating-label" for="my-text-field">C.P.</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
@@ -107,14 +110,14 @@
                         <div class="multi-row">
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field city-field">
-                                    <input type="text" class="mdc-text-field__input">
+                                    <input type="text" id="city-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Ciudad</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
                             </div>
                             <div class="multi-row-item">
                                 <div class="foo-textfield mdc-text-field lastname-field state-field">
-                                    <input type="text" class="mdc-text-field__input">
+                                    <input type="text" id="state-field" class="mdc-text-field__input">
                                     <label class="mdc-floating-label" for="my-text-field">Estado</label>
                                     <div class="mdc-line-ripple"></div>
                                 </div>
@@ -124,7 +127,7 @@
                             <div class="multi-row-item">
                                 <div class="mdc-select select-field">
                                     <i class="mdc-select__dropdown-icon"></i>
-                                    <select class="mdc-select__native-control">
+                                    <select id="country-field" class="mdc-select__native-control">
                                         <option value="" disabled selected></option>
                                         <option value="argentina">Argentina</option>
                                         <option value="chile">Chile</option>
@@ -140,11 +143,12 @@
                         </div>
                     </div>
                     <div class="submission-container">
-                        <button class="foo-button mdc-button register-btn">
+                        <button id="signup-field" class="foo-button mdc-button register-btn">
                             REGISTRATE
                         </button>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </body>
