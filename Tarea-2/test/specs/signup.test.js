@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-describe('Login', () => {
+describe('Signin', () => {
     before(() => {
         console.log('Signup test running...');
     });

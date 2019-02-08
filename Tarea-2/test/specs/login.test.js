@@ -32,7 +32,8 @@ describe('Font', () => {
         var classF = $('.mdc-typography--headline4');
         browser.call(done);
         var fontFamily = classF.getCSSProperty('font-family');
-        assert.equal(fontFamily.value, 'Roboto');
+        console.log(fontFamily);
+        assert.equal(fontFamily.value, 'roboto');
     });
 
     after(() => {
