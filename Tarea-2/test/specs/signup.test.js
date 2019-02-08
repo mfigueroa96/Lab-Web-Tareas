@@ -5,7 +5,7 @@ describe('Signin', () => {
         console.log('Signup test running...');
     });
     
-    it('Successfull Login', () => {
+    it('Successfull Signup', () => {
         browser.url('/');
         var name = $('#name-field');
         var lastname = $('#lastname-field');
@@ -36,5 +36,26 @@ describe('Signin', () => {
 
     after(() => {
         console.log('Signup test ending...');
+    });
+});
+
+describe('NumCP', () => {
+    before(() => {
+        console.log('CP test running...');
+    });
+
+    it('CP cannot be a number', () => {
+        browser.url('/');
+        var cp = $('#cp-field');
+        cp.setValue('test');
+        var button = $('#signup-field');
+        button.click();
+
+        var target = browser.getTitle();
+        assert.equal(target, 'Login / Sign in');
+    });
+
+    after(() => {
+        console.log('CP test ending...');
     });
 });

@@ -40,3 +40,41 @@ describe('Font', () => {
     });
 });
 
+describe('checkFocus', ()=>{
+    before(()=>{
+      console.log('Switching Focus test...');
+    });
+
+    it('Foucus Test',function(done){
+        browser.url('/');
+        var classColor = $('.mdc-text-field__input');
+        browser.call(done);
+        var colorFocus = classColor.getCSSProperty('caret-color');
+        console.log(colorFocus);
+        assert.equal(colorFocus.value, 'rgb(98,0,238)');
+        browser.call(done);
+    });
+
+    after(()=>{
+      console.log('Focus test finished...');
+    });
+});
+
+describe('WidthFrame', ()=>{
+    before(()=>{
+      console.log('Switching Frame Width test...');
+    });
+
+    it('Frame Width Test',function(done){
+        browser.url('/');
+        var loginFrame = $('.login-content');
+        browser.call(done);
+        var loginFramePix = loginFrame.getCSSProperty('width');
+        assert.equal(loginFramePix.value, '400px');
+        browser.call(done);
+    });
+
+    after(()=>{
+      console.log('Frame Width test finished...');
+    });
+});
