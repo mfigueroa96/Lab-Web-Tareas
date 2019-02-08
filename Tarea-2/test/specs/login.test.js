@@ -40,3 +40,22 @@ describe('Font', () => {
     });
 });
 
+describe('checkFocus', ()=>{
+    before(()=>{
+      console.log('Switching Focus test...');
+    });
+
+    it('Foucus Test',function(done){
+        browser.url('/');
+        var classColor = $('.mdc-text-field__input');
+        browser.call(done);
+        var colorFocus = classColor.getCSSProperty('caret-color');
+        console.log(colorFocus);
+        assert.equal(colorFocus.value, 'rgb(98,0,238)');
+        browser.call(done);
+    });
+
+    after(()=>{
+      console.log('Focus test finished...');
+    });
+});
