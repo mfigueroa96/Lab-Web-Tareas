@@ -22,3 +22,21 @@ describe('Login', () => {
     });
 });
 
+describe('Font', () => {
+    before(() => {
+        console.log('First css test starting');
+    });
+
+    it('font correcta',function(done){
+        browser.url('/');
+        var classF = $('.mdc-typography--headline4');
+        browser.call(done);
+        var fontFamily = classF.getCSSProperty('font-family');
+        assert.equal(fontFamily.value, 'Roboto');
+    });
+
+    after(() => {
+        console.log('First css test ending');
+    });
+});
+
