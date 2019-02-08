@@ -17,7 +17,6 @@ describe('Login', () => {
         var cp = $('#cp-field');
         var city = $('#city-field');
         var state = $('#state-field');
-        var country = $('#country-field');
         var button = $('#signup-field');
         name.setValue('Nombre');
         lastname.setValue('Apellido');
@@ -29,7 +28,6 @@ describe('Login', () => {
         cp.setValue('312');
         city.setValue('Córdoba');
         state.setValue('Córdoba');
-        country.setValue('Argentina');
         button.click();
 
         var target = browser.getTitle();
