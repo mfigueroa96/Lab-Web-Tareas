@@ -1,7 +1,7 @@
 const autoprefixer = require('autoprefixer');
 
 module.exports = [{
-    entry: ['./estilos/app.scss', './scripts/app.js'],
+    entry: ['./styles/app.scss', './scripts/app.js'],
     output: {
         // This is necessary for webpack to compile
         // But we never use style-bundle.js
@@ -15,7 +15,7 @@ module.exports = [{
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'estilos.css',
+                            name: 'styles.css',
                         },
                     },
                     { loader: 'extract-loader' },
