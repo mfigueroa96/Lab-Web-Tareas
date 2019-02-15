@@ -1,0 +1,21 @@
+
+.login-container{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+
+  align-items: center;
+  justify-content: center;
+  h1{
+    color: teal;
+    margin-bottom: 20px;
+  }
+}
+Input{
+  width: 300px;
+}
