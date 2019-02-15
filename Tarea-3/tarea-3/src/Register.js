@@ -11,14 +11,19 @@ import { FormControl } from '@material-ui/core';
 const Register = () => {
     return (
         <div>
-            <Headline text="Registráte" />
             <Headline text="¿Sos nuevo?" />
             <FormControl variant="filled">
                 <Section title="Datos personales">
                     <LineLayout>
                         <Input id="name-field" label="Nombre" />
-                        <Input id="" label="Apellidos" />
-                        <Input id="" label="Correo" />
+                        <Input id="lastname-field" label="Apellidos" />
+                        <Input id="email-field" label="Correo" />
+                    </LineLayout>
+                </Section>
+                <Section title="Datos de la cuenta">
+                    <LineLayout>
+                        <Input id="user-field" label="Nombre de Usuario" type={"text"} placeholder={"@user"}/>
+                        <Input id="password-field" label="Contraseña" type="password"/>
                     </LineLayout>
                 </Section>
                 <Section title="Domicilio">
@@ -27,7 +32,7 @@ const Register = () => {
                     </LineLayout>
                     <LineLayout>
                         <Input id="colony-field" label="Barrio o Colonia" />
-                        <Input id="cp-field" label="C.P." />
+                        <Input id="cp-field" label="C.P." type="number"/>
                     </LineLayout>
                     <LineLayout>
                         <Input id="city-field" label="Ciudad" />

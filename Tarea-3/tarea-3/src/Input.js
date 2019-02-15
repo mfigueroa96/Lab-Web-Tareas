@@ -12,6 +12,7 @@ const Input = (props) => {
                 margin="normal"
                 variant="outlined"
                 type={props.type}
+                placeholder={props.placeholder}
             ></TextField>
         </Grid>
     );
