@@ -16,7 +16,7 @@ import Select from '@material-ui/core/Select';
 class SimpleSelect extends React.Component {
   state = {
     country: '',
-    labelWidth: 10,
+    labelWidth: 20,
   };
 
 

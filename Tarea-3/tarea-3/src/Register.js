@@ -12,6 +12,7 @@ const Register = () => {
     return (
         <div>
             <Headline text="Registráte" />
+            <Headline text="¿Sos nuevo?" />
             <FormControl variant="filled">
                 <Section title="Datos personales">
                     <LineLayout>
