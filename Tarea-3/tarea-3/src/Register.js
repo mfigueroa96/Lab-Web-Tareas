@@ -8,7 +8,7 @@ import Input from './Input';
 const Register = () => {
     return (
         <div>
-            <Headline text="Registráte" />
+            <Headline text="¿Sos nuevo?" />
             <Section title="Datos personales">
                 <LineLayout>
                     <Input id="name-field" label="Nombre" />

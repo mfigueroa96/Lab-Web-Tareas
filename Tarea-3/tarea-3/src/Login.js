@@ -6,7 +6,7 @@ import Headline from './Headline';
 const Login = () => {
     return (
         <div className="login-container">
-            <Headline text="¿Sos nuevo?" />
+            <Headline text="¿Ya tenés cuenta?" />
         </div>
     );
 }
