@@ -11,6 +11,7 @@ const Input = (props) => {
                 label={props.label}
                 margin="normal"
                 variant="outlined"
+                type={props.type}
             ></TextField>
         </Grid>
     );
