@@ -17,7 +17,7 @@ const Login = () => {
                 <Input type= "password"id="name-field" label="Contraseña" />
             </LineLayout>
             <LineLayout>
-            
+              <Button className= "button">INICIA SESIÓN</Button>
             </LineLayout>
         </div>
     );
