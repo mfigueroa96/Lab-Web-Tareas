@@ -1,4 +1,5 @@
 import React from 'react';
+import './SubHeadline.scss';
 
 const SubHeadline = (props) => {
     return (

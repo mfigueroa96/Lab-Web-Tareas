@@ -5,8 +5,9 @@ import './Input.scss';
 
 const Input = (props) => {
     return (
-        <Grid item>
+        <Grid item className="input-grid">
             <TextField
+                className="input-textfield"
                 id={props.id}
                 label={props.label}
                 margin="normal"

@@ -1,3 +1,9 @@
-input {
-    
+.input-grid {
+    display: flex;
+    padding: 5px;
+    box-sizing: border-box;
+
+    .input-textfield {
+        flex: 1;
+    }
 }
