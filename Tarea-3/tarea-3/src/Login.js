@@ -11,13 +11,13 @@ const Login = () => {
         <div className="login-container">
             <Headline text="¿Ya tenés cuenta?" />
             <LineLayout>
-                <Input id="name-field" label="Nombre" />
+                <Input id="name-field" label="Nombre" color="black" />
             </LineLayout>
             <LineLayout>
-                <Input type= "password"id="name-field" label="Contraseña" />
+                <Input type= "password"id="name-field" label="Contraseña" style="black" />
             </LineLayout>
             <LineLayout>
-            
+              <Button className= "button">INICIA SESIÓN</Button>
             </LineLayout>
         </div>
     );

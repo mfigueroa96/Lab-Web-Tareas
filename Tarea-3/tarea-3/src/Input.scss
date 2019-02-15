@@ -3,7 +3,34 @@
     padding: 5px;
     box-sizing: border-box;
 
+    &.white {
+        input {
+            border-bottom: 1px solid white;
+            color: white;
+        }
+
+        label {
+            color: white;
+        }
+    }
+
+    &.black {
+        input {
+            border-bottom: 1px solid black;
+            color: black;
+        }
+
+        label {
+            color: black;
+        }
+    }
+
     .input-textfield {
         flex: 1;
     }
+}
+
+.MuiInputBase-root-133.MuiOutlinedInput-root-120.MuiInputBase-formControl-134:hover {
+    border-radius: 5px;
+    border: 1px solid white;
 }

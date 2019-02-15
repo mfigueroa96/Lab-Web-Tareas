@@ -5,14 +5,16 @@ import './Input.scss';
 
 const Input = (props) => {
     return (
-        <Grid item className="input-grid">
+        <Grid item className={["input-grid", props.style]}>
             <TextField
                 className="input-textfield"
                 id={props.id}
                 label={props.label}
                 margin="normal"
-                variant="outlined"
+                variant="filled"
                 type={props.type}
+                style={{color: props.color}}
+                placeholder={props.placeholder}
             ></TextField>
         </Grid>
     );
