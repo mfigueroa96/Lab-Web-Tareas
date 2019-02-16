@@ -4,6 +4,13 @@
     box-sizing: border-box;
     color: white;
     border-radius: 5px;
+    .button{
+        padding: 1vh 1vw;
+        color: white;
+        border-color: white;
+        margin: 3vh auto 1vh auto;
+        width: 50%;
+    }
 }
 
 .form-control {
