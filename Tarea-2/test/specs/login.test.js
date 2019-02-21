@@ -68,7 +68,6 @@ describe('WidthFrame', ()=>{
     it('Frame Width Test',function(done){
         browser.url('/');
         var loginFrame = $('.login-content');
-        browser.call(done);
         var loginFramePix = loginFrame.getCSSProperty('width');
         assert.equal(loginFramePix.value, '400px');
         browser.call(done);
