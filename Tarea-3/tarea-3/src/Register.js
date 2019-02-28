@@ -6,7 +6,7 @@ import Section from './Section';
 import LineLayout from './LineLayout';
 import Input from './Input';
 import SimpleSelect from './SimpleSelect';
-import { FormControl } from '@material-ui/core';
+import { FormControl, Button } from '@material-ui/core';
 
   
 const Register = () => {
@@ -45,6 +45,7 @@ const Register = () => {
                         <SimpleSelect></SimpleSelect>
                     </LineLayout>
                 </Section>
+                <Button className= "button" variant="outlined" className= "button">INICIA SESIÓN</Button>
             </FormControl>
         </div>
     );
