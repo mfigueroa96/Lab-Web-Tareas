@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router';
+import { BrowserRouter, Route } from 'react-router-dom';
 import 'typeface-roboto';
 import './App.scss';
-import Heading from './Heading';
-import Content from './Content';
+import Main from './components/Main';
+import Weather from './components/Weather';
 
 class App extends Component {
     render() {
         return (
-            <div className="main">
-                <Heading />
-                <Content />
+            <div>
+                <BrowserRouter>
+                    <Route path='/' exact component={Main} />
+                    <Route path='/:city' exact component={Weather} />
+                </BrowserRouter>
             </div>
         );
     }
