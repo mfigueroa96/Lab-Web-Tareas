@@ -21,9 +21,9 @@ class TodoList extends React.Component{
       return(
         <div className="table-responsive">
             <Grid container align="stretch" direction="row">
-            <Grid item lg={1}></Grid>
+              <Grid item lg={1}></Grid>
               {rows}
-            <Grid item lg={1}></Grid>
+              <Grid item lg={1}></Grid>
             </Grid>
         </div>
       )

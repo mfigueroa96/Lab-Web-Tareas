@@ -1,11 +1,13 @@
 .result-item {
     color: white;
     padding: 10px;
+    display: flex;
 
     .result-item-wrap {
         border: 2px solid white;
         padding: 40px 20px;
         border-radius: 5px;
+        flex: 1;
     }
 
     .result-item-date {
