@@ -9,6 +9,10 @@ const USERS = JSON.parse(fs.readFileSync('./users.json')).users;
 
 app.use(cors({origin: ['http://localhost:3000']}));
 
+function normalizeKey(key){
+    return key.replace(/-/g, "");
+}
+
 app.get('/api/tequila/:key', (req, res) => {
     var key = req.params.key;
 
@@ -17,7 +21,7 @@ app.get('/api/tequila/:key', (req, res) => {
 
     PROVIDERS.some(provider => {
         provider.tequilas.some(tequila => {
-            if (tequila.serial_numbers.includes(key)) {
+            if (tequila.serial_numbers.map(sn=>normalizeKey(sn)).includes(normalizeKey(key))) {
                 my_tequila = Object.assign({}, tequila);
                 delete my_tequila.serial_numbers;
                 found = true;
