@@ -10,7 +10,6 @@ import ServerActions from "../actions/ServerActions"
 class API {
 
   getTequilaInfo = (id) => {
-    console.log("Esta en API"+"   "+    `${constants.API}/tequila/`+id)
     axios.get(constants.API+"/tequila/"+id)
       .then(response => {
         if (response.data.my_tequila != null) {
@@ -28,7 +27,7 @@ class API {
       .then(response => {
         if (response.data != null) {
             console.log(response.data);
-            ServerActions.receiveProviderInfo(response);
+            ServerActions.receiveProviderInfo(response.data.my_provider);
         }
         else {
           ServerActions.receiveProviderInfo({"provider_exists": "false"});
@@ -36,8 +35,8 @@ class API {
     });
   }
 
-  getUserHistory(id) {
-    axios.get(`${constants.API}/user/`+id)
+  getUserHistory(id, sort) {
+    axios.get("${constants.API}/user/"+id+"?sort="+sort)
       .then(response => {
         if (response.data != null) {
             console.log(response.data);

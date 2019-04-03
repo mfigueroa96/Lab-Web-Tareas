@@ -23,10 +23,11 @@ class Action{
     
     API.getProviderInfo(providerkey);
   }
-  getUserHistory(userkey) {
+  getUserHistory(userkey, sort) {
     AppDispatcher.handleViewAction({
       actionType: constants.USER_HISTORY,
-      tequila: userkey
+      tequila: userkey,
+      sort: sort
     });
     
     API.getUserHistory(userkey);

@@ -24,8 +24,9 @@ export default class Provider extends Component {
     
 
     render() {
+        var data = this.state.listProvider.provider
         return (
-            <div>{this.state.listProvider.provider.name}</div>
+            <div>{data.brand}</div>
         )
     }
 }
