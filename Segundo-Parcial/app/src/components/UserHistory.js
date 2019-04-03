@@ -3,6 +3,8 @@ import TodoStore from "../stores/Store"
 import TodoActions from "../actions/Action"
 import Grid from '@material-ui/core/Grid';
 import ResultItem from "../components/ResultItem"
+import SectionHeader from './SectionHeader';
+import '../styles/UserHistory.scss';
 
 export default class Provider extends Component {
     state = {
@@ -36,11 +38,21 @@ export default class Provider extends Component {
         }
 
         return (
-            <div className="table-responsive">
-            <Grid container align="stretch" direction="row">
-                {rows}
-                </Grid>
+            <div className='user-section'>
+                <SectionHeader />
+                <div className='user-container'>
+                    <h1>Bienvenido, {this.props.match.params.userKey}</h1>
+                    <div className='user-history'>
+                        {rows}
+                    </div>
+                </div>
             </div>
+
+            // <div className="table-responsive">
+            // <Grid container align="stretch" direction="row">
+            //     {rows}
+            //     </Grid>
+            // </div>
         )
     }
 }

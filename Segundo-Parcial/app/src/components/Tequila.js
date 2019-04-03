@@ -7,6 +7,7 @@ import TodoActions from "../actions/Action"
 import '../styles/Tequila.scss';
 import { Grid } from '@material-ui/core';
 import TequilaAttribute from './TequilaAttribute';
+import SectionHeader from './SectionHeader';
 
 export default class Tequila extends Component {
     state = {
@@ -34,18 +35,7 @@ export default class Tequila extends Component {
 
         return (this.state.listTequila.exist) ?
             <div className='tequila-section'>
-                <div className='tequila-header'>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <Link to='/'>
-                            <img src='/assets/back.png' />
-                            Regresar al inicio
-                        </Link>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <img id='tequila-icon-2' src='/assets/tequila-icon-2.png' />
-                        <h1>Tequilas de México S.A. de C.V.</h1>
-                    </div>
-                </div>
+                <SectionHeader />
                 <Grid container className='tequila-info'>
                     <Grid item xl={6} lg={6} md={6} sm={4} className='tequila-info-left'>
                         <div className='tequila-description'>

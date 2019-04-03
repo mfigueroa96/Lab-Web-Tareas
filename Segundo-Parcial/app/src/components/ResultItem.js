@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import '../styles/ResultItem.scss';
 
 export default class Result extends Component {
     

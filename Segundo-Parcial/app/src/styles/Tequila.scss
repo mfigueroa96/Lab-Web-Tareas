@@ -1,36 +1,4 @@
 .tequila-section {
-    .tequila-header {
-        height: 200px;
-        background-color: black;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        margin-bottom: 30px;
-
-        img#tequila-icon-2 {
-            width: 80px;
-            vertical-align: top;
-            margin-right: 20px;
-        }
-
-        h1 {
-        }
-
-        a {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: 1.3em;
-            text-decoration: none;
-
-            img {
-                width: 30px;
-            }
-        }
-    }
-
     .tequila-info {
         padding: 30px;
         width: 1200px;
