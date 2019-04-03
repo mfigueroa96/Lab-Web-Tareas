@@ -35,8 +35,8 @@ class API {
     });
   }
 
-  getUserHistory(id) {
-    axios.get(`${constants.API}/user/`+id)
+  getUserHistory(id, sort) {
+    axios.get("${constants.API}/user/"+id+"?sort="+sort)
       .then(response => {
         if (response.data != null) {
             console.log(response.data);
