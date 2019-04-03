@@ -1,5 +1,15 @@
 .result-item {
-    .result-item-degrees {
-        font-size: 1.8em;
+    .result-item-wrap {
+        padding: 10px;
+
+        .result-item-degrees {
+            font-size: 1.8em;
+        }
+
+        .result-item-img {
+            height: 200px;
+            margin-top: 20px;
+            display: block;
+        }
     }
 }

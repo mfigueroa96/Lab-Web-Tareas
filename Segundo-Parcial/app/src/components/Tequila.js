@@ -33,6 +33,7 @@ export default class Tequila extends Component {
 
     render() {
         var img = this.state.listTequila.tequila.uuid !== undefined ? this.state.listTequila.tequila.uuid.split('-').join('') : '';
+        var provider_img = this.state.listTequila.tequila.brand_uuid !== undefined ? this.state.listTequila.tequila.brand_uuid.split('-').join('')  : '';
 
         return (this.state.listTequila.exist) ?
             <div className='tequila-section'>
@@ -58,6 +59,12 @@ export default class Tequila extends Component {
                         </div>
                     </Grid>
                 </Grid>
+                <div className='goto-provider'>
+                    <Link to={`/provider/${this.state.listTequila.tequila.brand}`}>
+                        Este artículo fue registrado y verificado por
+                        <img src={`/assets/provider/${provider_img}.png`} />
+                    </Link>
+                </div>
             </div>
         : <NotFound />
     }

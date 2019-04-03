@@ -20,6 +20,7 @@ export default class Result extends Component {
                     <div className="result-item-condition">{this.props.element.place_of_distillation}</div>
                     <div className="result-item-condition">{this.props.element.purity}</div>
                     <div className="result-item-condition">{this.props.element.my_serial}</div>
+                    <img className='result-item-img' src={`/assets/tequila/${this.props.element.uuid.split('-').join('')}.png`} />
                 </div>
             </Grid>
         );

@@ -10,6 +10,7 @@
     justify-content: space-between;
     padding: 0 20px;
     margin-bottom: 30px;
+    transition-duration: 0.4s;
 
     img#tequila-icon-2 {
         width: 80px;
@@ -27,5 +28,9 @@
         img {
             width: 30px;
         }
+    }
+
+    &:hover {
+        height: 300px;
     }
 }
