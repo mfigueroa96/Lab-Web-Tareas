@@ -24,11 +24,11 @@ export default class Provider extends Component {
         this.setState({listUser: TodoStore.getListUser()});
         console.log(this.state.listUser.list[0])
     }
-    
+
 
     render() {
         var rows = [];
-        var data = this.state.listUser.list[0]
+        var data = this.state.listUser.list[0];
         console.log(data)
         if(data != undefined && data.length > 0){
             data.forEach((item, i) => {
