@@ -30,7 +30,7 @@ class Action{
       sort: sort
     });
     
-    API.getUserHistory(userkey);
+    API.getUserHistory(userkey, sort);
   }
 
 }
