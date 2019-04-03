@@ -4,39 +4,203 @@
             "brand": "1800",
             "tequilas": [
                 {
-                    "uuid": "1234-5678-90",
-                    "name": "",
-                    "alcohol_degrees": "",
-                    "type": "",
+                    "uuid": "fa077244-aaaf-4f2c-8c01-89fbef53bb92",
+                    "name": "1800 Añejo",
+                    "alcohol_degrees": "38.0%",
+                    "purity": "100%",
+                    "date_of_release": "Dom 05 Ago 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
                     "serial_numbers": [
-                        "c26d9f83-ccdd-4ad9-ae8c-a425f8718128","e3779a62-d5bf-4543-b5aa-0ebd5fdf630f","bcc0f77f-17b0-4cf1-ac9e-b0c437750753","f2d9542b-cf7d-4e6a-96a6-9ecfb2ba441f","ca64efa4-84db-4fcd-acae-38535710ceb3","205a6003-33af-4757-b87a-e3e698880070","064ca994-ee54-4810-bba3-996ddd47bd31","76e2efb9-0f90-43a3-adbf-d0b7ae9c3b64","55a12e49-aaaf-4486-8ec2-0934003937c0","44fb2fb2-c2e2-4efc-a071-d34df51c3ad0"
                     ]
                 },
                 {
-                    "uuid": "",
-                    "name": "",
+                    "uuid": "59118275-33e7-4698-b47b-f94c1f1bba9b",
+                    "name": "1800 Cristalino",
                     "alcohol_degrees": "",
-                    "type": "",
+                    "purity": "100%",
+                    "date_of_release": "Jue 31 May 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
                     "serial_numbers": [
-                        "c8d78fa0-c30e-43d4-bb32-13980e02cb76","da1d9d7f-75a5-4004-b2bd-4c575501032f","7a5621a8-47a1-4115-a72b-a9daca1cdb31","93eeaafd-cb38-4075-b473-7aa93e98008f","987fce5b-d50e-4a34-bb1f-c46417f050bc","3b757d3a-8bc7-42df-b702-f737f64237ed","6de002b5-49b2-4013-99c1-66ffaba104ab","570de784-652a-4c58-8a1f-eec35ab06fdd","bc55b82a-8272-471c-9910-28687f887f29","feef85ca-cfaf-4818-b02c-a2f262078007"
                     ]
                 },
                 {
-                    "uuid": "",
-                    "name": "",
+                    "uuid": "41599455-be8a-41c9-b8e8-ccd40483840e",
+                    "name": "1800 Reposado",
                     "alcohol_degrees": "",
-                    "type": "",
+                    "purity": "100%",
+                    "date_of_release": "Jue 03 Ene 2019",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
                     "serial_numbers": [
-                        "69b508f2-10f1-4c96-998b-130e13c07e49","55f39808-05ab-4e6a-aeca-830b20a9ba1c","2663ae60-1604-4c72-911c-bb23854a3044","55619962-65f2-43c0-a637-9c0e144ce361","490706db-bea0-47e0-8bb3-e2277b10772b","fbf07d3a-a821-487d-9150-64dc895f4609","3f95402d-691f-427f-91d1-3acce7c9c3a9","cfe7e0e3-b889-4efa-b5ce-f31177b78541","78138066-7770-4e41-944c-c086442b7131","26e6b816-b9d6-4660-a707-b225c021aae7"
+                    ]
+                }
+            ]
+        },
+        {
+            "brand": "Don Julio",
+            "tequilas": [
+                {
+                    "uuid": "8c105ebe-8570-4b2a-b0ee-fafe0a3a6ba2",
+                    "name": "Blanco",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Vie 22 Feb 2019",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
                     ]
                 },
                 {
-                    "uuid": "",
-                    "name": "",
+                    "uuid": "c1c18f31-af81-41b1-8ef3-f32986846520",
+                    "name": "Añejo",
                     "alcohol_degrees": "",
-                    "type": "",
+                    "purity": "100%",
+                    "date_of_release": "Sab 01 Dic 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
                     "serial_numbers": [
-                        "a29c16b5-d236-4a46-becd-ef3d4210f705","01bd2730-9c7a-4aa4-8894-2b9512c6ddd2","56261045-dc2a-48e3-9641-2a34032c21dd","eaecf16f-e6ee-4dc5-b885-1ce5e27bd3bd","c171dcca-fc19-4803-8c00-18128caf596f","45c56c49-caef-4e2d-ad18-f3f432416600","726914aa-e4f7-4b80-9ca1-16349ba8925a","968c5101-33d9-4159-8e45-a618c8d811ad","a6f5d017-3580-47e2-adac-e2bbf7872c94","4feb59b4-663f-406a-8e1c-8dad82782e8a"
+                    ]
+                },
+                {
+                    "uuid": "dd92cfe0-ba2b-42b6-8563-bcd5915bac02",
+                    "name": "Reposado",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Vie 11 Ene 2019",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                }
+            ]
+        },
+        {
+            "brand": "Herradura",
+            "tequilas": [
+                {
+                    "uuid": "b9689b66-6d7f-4c4e-9501-befb2a7e2c50",
+                    "name": "Reposado",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Mar 17 Jul 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "b83e9d5e-c251-400b-b597-e07323ba352f",
+                    "name": "Plata",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Dom 09 Sep 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "5a885171-e13a-48b0-8c8b-3bea2deed7d2",
+                    "name": "Supremo",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Jue 05 Abr 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                }
+            ]
+        },
+        {
+            "brand": "Jose Cuervo",
+            "tequilas": [
+                {
+                    "uuid": "894e9449-a3db-44da-8a5e-c830ad631fee",
+                    "name": "Cristalino",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Jue 12 Abr 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "00921e7c-8e31-40cc-b84c-af244c98b7b2",
+                    "name": "Plata",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Mie 12 Dic 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "9179d409-7643-4613-abd2-0eec8e04aaab",
+                    "name": "Reposado",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Vie 05 Oct 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                }
+            ]
+        },
+        {
+            "brand": "Mucha Liga",
+            "tequilas": [
+                {
+                    "uuid": "adba5d26-a074-4121-aecb-18131ca3f79c",
+                    "name": "Añejo",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Mar 05 Jun 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "2f7fdc3d-0a3f-491f-b620-a3f0b091e5c6\n",
+                    "name": "Cristalino",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Mar 24 Abr 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
+                    ]
+                },
+                {
+                    "uuid": "a2a491df-afdd-492c-9260-4f4a6be42bd0\n",
+                    "name": "Reposado",
+                    "alcohol_degrees": "",
+                    "purity": "100%",
+                    "date_of_release": "Lun 24 Dic 2018",
+                    "distillation": "",
+                    "year_of_distillation": "",
+                    "place_of_distillation": "",
+                    "serial_numbers": [
                     ]
                 }
             ]

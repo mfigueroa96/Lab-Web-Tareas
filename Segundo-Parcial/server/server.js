@@ -24,11 +24,11 @@ app.get('/api/tequila/:key', (req, res) => {
             if (tequila.serial_numbers.map(sn=>normalizeKey(sn)).includes(normalizeKey(key))) {
                 my_tequila = Object.assign({}, tequila);
                 delete my_tequila.serial_numbers;
+                my_tequila.tequila_exists = true;
                 found = true;
                 return true;
             }
         });
-
         if (found) return true;
     });
 
