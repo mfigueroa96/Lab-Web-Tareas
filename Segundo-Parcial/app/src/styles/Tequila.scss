@@ -1,0 +1,53 @@
+.tequila-section {
+    .tequila-header {
+        height: 200px;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            padding: 20px;
+        }
+    }
+
+    .tequila-info {
+        padding: 30px;
+
+        .tequila-description {
+            > * {
+                margin-bottom: 10px;
+            }
+
+            .tequila-name {
+                font-size: 3em;
+            }
+
+            .tequila-brand {
+                font-size: 2em;
+            }
+
+            .tequila-serial-no {
+                font-size: 1.8em;
+            }
+        }
+    }
+
+    .tequila-attributes {
+        margin-top: 30px;
+
+        .tequila-attribute {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+
+            .tequila-attribute-prop {
+                font-weight: 700;
+                margin-right: 10px;
+            }
+
+            .tequila-attribute-value {
+
+            }
+        }
+    }
+}
