@@ -1,7 +1,8 @@
 // Todo server actions
 //import constants from "../constants/Constants"
+import constants from "../constants/Constants"
 var AppDispatcher = require('../dispatcher/AppDispatcher').default;
-var constants = require("../constants/Constants");
+//var constants = require("../constants/Constants");
 
 class ServerActions{ 
 

@@ -13,13 +13,12 @@ class API {
     console.log("Esta en API"+"   "+    `${constants.API}/tequila/`+id)
     axios.get(constants.API+"/tequila/"+id)
       .then(response => {
-        console.log(response.data.my_tequila != null)
         if (response.data.my_tequila != null) {
             console.log(response.data.my_tequila);
             ServerActions.receiveTequilaInfo(response.data.my_tequila);
         }
         else {
-          ServerActions.receiveTequilaInfo({"tequila_exists": "false"});
+          ServerActions.receiveTequilaInfo({"uuid": constants.NOT_ACCEPTED});
         }
     });
   }

@@ -15,7 +15,7 @@ export default class Tequila extends Component {
     }
 
     getInitialState =() => {
-       return TodoStore.getListTequila();
+        this.setState({listTequila: TodoActions.getTequilaInfo(this.props.match.params.tequilaKey) });
     }
 
     componentDidMount() {
@@ -25,7 +25,7 @@ export default class Tequila extends Component {
 
     _onChange = () => {
         this.setState({listTequila: TodoStore.getListTequila()});
-        console.log(this.state.listTequila)
+        console.log(this.state)
     }
     
 
