@@ -74,7 +74,7 @@ app.get('/api/user/:username', (req, res)=>{
 
     var my_user = USERS.find(user => user.username == username);
     if( my_user !== undefined ) {
-        USERS.find(user => user.username == username).tequilas.some(tequisquiapan => {
+        my_user.tequilas.some(tequisquiapan => {
             PROVIDERS.some(provider => {
                 provider.tequilas.some(tequila => {
                     if (tequila.serial_numbers.includes(tequisquiapan.serial_num)) {
