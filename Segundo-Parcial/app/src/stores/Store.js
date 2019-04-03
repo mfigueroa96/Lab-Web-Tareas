@@ -25,7 +25,7 @@ var _storeP = {
 };
 
 var _storeU = {
-  list: [],
+  list: {},
   exist: true
 
 };
@@ -81,7 +81,7 @@ AppDispatcher.register(function(payload) {
       var newTodoP =  action.response;
       _storeP.provider = newTodoP
       console.log(newTodoP)
-      if(newTodo.uuid != AppConstants.PROVIDER_NOT_FOUND){
+      if(newTodoP.uuid != AppConstants.PROVIDER_NOT_FOUND){
         _storeP.exist = true
       }else{
         _storeP.exist = false
@@ -93,12 +93,7 @@ AppDispatcher.register(function(payload) {
       var newTodoU =  action.response;
       console.log(newTodoU)
       if(newTodoU.length > 0){
-        if(_storeU.list.length<1){
-          _storeU.list.push(newTodoU);
-        }else{
-          _storeU.list.pop();
-          _storeU.list.push(newTodoU);
-        }
+       _storeU.list = newTodoU
       }else{
         _storeU.list = {}
         _storeU.exist = false
