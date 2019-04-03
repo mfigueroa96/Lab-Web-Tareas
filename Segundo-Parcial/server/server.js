@@ -41,11 +41,13 @@ app.get('/api/tequila/:key', (req, res) => {
 
     PROVIDERS.some(provider => {
         provider.tequilas.some(tequila => {
-            if (tequila.serial_numbers.map(sn=>normalizeKey(sn)).includes(normalizeKey(key))) {
+            var founded = tequila.serial_numbers.find(tequilyta => normalizeKey(tequilyta) == normalizeKey(key));
+            if (founded != undefined){
                 my_tequila = Object.assign({}, tequila);
                 delete my_tequila.serial_numbers;
                 my_tequila.tequila_exists = true;
                 found = true;
+                key = founded;
                 return true;
             }
         });
