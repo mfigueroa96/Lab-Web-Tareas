@@ -1,5 +1,5 @@
-import React from 'react';
-import ProyectoActions from '../actions/ProyectoActions';
+/*import React from 'react';
+//import ProyectoActions from '../actions/ProyectoActions';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -129,4 +129,4 @@ export default withStyles(styles)(AgregarElementoComponent);
 
 	
 
-
+*/

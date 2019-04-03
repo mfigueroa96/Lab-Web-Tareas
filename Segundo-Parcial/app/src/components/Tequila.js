@@ -1,36 +1,34 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import serviceCnts from '../constants/service';
-import axios from 'axios';
+import TodoStore from "../stores/Store"
+import TodoActions from "../actions/Action"
+//var TodoActions = require('../actions/Action.js');
+//var TodoStore = require('../stores/Store.js').default;
 
 export default class Tequila extends Component {
     state = {
-        tequila_exists: true,
-        tequila: {
-            name: ''
-        }
+        listTequila: TodoStore.getListTequila(),
+    }
+
+    getInitialState =() => {
+       return TodoStore.getListTequila();
     }
 
     componentDidMount() {
-        axios.get(`${serviceCnts.API}/tequila/${this.props.match.params.tequilaKey}`)
-        .then(response => {
-            if (response.data.my_tequila != null) {
-                console.log(response.data.my_tequila);
-                this.setState({
-                    tequila: response.data.my_tequila
-                });
-            }
-            else {
-                this.setState({
-                    tequila_exists: false
-                });
-            }
-        });
+        TodoStore.addChangeListener(this._onChange);
+        TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
     }
 
+    _onChange = () => {
+        this.setState({listTequila: TodoStore.getListTequila()});
+        console.log(this.state.listTequila)
+    }
+    
+
     render() {
+
         return (this.state.tequila_exists) ?
-            <div>{this.state.tequila.name}</div>
-        : <Redirect to='/' />
+            <div>{this.state.tequila.uuid}</div>
+        : <div></div>
     }
 }
