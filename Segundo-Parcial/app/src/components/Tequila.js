@@ -8,6 +8,7 @@ import '../styles/Tequila.scss';
 import { Grid } from '@material-ui/core';
 import TequilaAttribute from './TequilaAttribute';
 import SectionHeader from './SectionHeader';
+import NotFound from './NotFound';
 
 export default class Tequila extends Component {
     state = {
@@ -58,8 +59,6 @@ export default class Tequila extends Component {
                     </Grid>
                 </Grid>
             </div>
-        : <div>
-            NO
-        </div>
+        : <NotFound />
     }
 }

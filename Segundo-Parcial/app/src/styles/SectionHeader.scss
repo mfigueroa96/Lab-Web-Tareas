@@ -1,6 +1,9 @@
 .tequila-header {
     height: 200px;
     background-color: black;
+    background-image: url(/assets/header.png);
+    background-size: cover;
+    background-position: center;
     color: white;
     display: flex;
     align-items: center;
