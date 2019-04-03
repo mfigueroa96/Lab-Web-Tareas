@@ -7,6 +7,7 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/Constants';
 import ObjectAssign from 'object-assign';
 import EventEmitter from 'events';
+import App from '../App';
 
 
 
@@ -19,12 +20,14 @@ var _storeT = {
 };
 
 var _storeP = {
-  provider: {}
+  provider: {},
+  exist: true
 };
 
 var _storeU = {
-  list: [],
-  editing: false
+  list: {},
+  exist: true
+
 };
 
 // Define the public event listeners and getters that
@@ -62,7 +65,6 @@ AppDispatcher.register(function(payload) {
   switch(action.actionType) {
     
     case AppConstants.GET_TEQUIINFO_RESPONSE:
-    console.log("HERE")  
     console.log(action.response);
       // Construct the new todo string
       var newTodo = action.response;
@@ -78,16 +80,23 @@ AppDispatcher.register(function(payload) {
     case AppConstants.GET_PROVIDER_RESPONSE:
       var newTodoP =  action.response;
       _storeP.provider = newTodoP
+      console.log(newTodoP)
+      if(newTodoP.uuid != AppConstants.PROVIDER_NOT_FOUND){
+        _storeP.exist = true
+      }else{
+        _storeP.exist = false
+      }
+     
       TodoStore.emit(CHANGE_EVENT);
       break;
     case AppConstants.GET_USER_RESPONSE:
       var newTodoU =  action.response;
       console.log(newTodoU)
-      if(_storeU.list.length<1){
-        _storeU.list.push(newTodoU);
+      if(newTodoU.length > 0){
+       _storeU.list = newTodoU
       }else{
-        _storeU.list.pop();
-        _storeU.list.push(newTodoU);
+        _storeU.list = {}
+        _storeU.exist = false
       }
       TodoStore.emit(CHANGE_EVENT);
       break;

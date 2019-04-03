@@ -17,12 +17,18 @@ export default class Provider extends Component {
 
     componentDidMount() {
         TodoStore.addChangeListener(this._onChange);
-        TodoActions.getUserHistory(this.props.match.params.userKey);
+        TodoActions.getUserHistory(this.props.match.params.userKey, '0');
     }
 
     _onChange = () => {
         this.setState({listUser: TodoStore.getListUser()});
         console.log(this.state.listUser.list[0])
+    }
+
+
+
+    sorter_ValueChange = (e) => {
+        TodoActions.getUserHistory(this.props.match.params.userKey, document.getElementById('sorter').value);
     }
 
 
@@ -33,7 +39,7 @@ export default class Provider extends Component {
         if(data != undefined && data.length > 0){
             data.forEach((item, i) => {
                 console.log(item)
-            rows.push(<ResultItem key={i} element={item}></ResultItem>);
+            rows.push(<ResultItem key={i} element={item} user={this.props.match.params.userKey}></ResultItem>);
             });
         }
 
@@ -42,17 +48,24 @@ export default class Provider extends Component {
                 <SectionHeader />
                 <div className='user-container'>
                     <h1>Bienvenido, {this.props.match.params.userKey}</h1>
+                    <div className='user-sorting'>
+                        <p>Ordenar por</p>
+                        <select id='sorter' onChange={this.sorter_ValueChange}>
+                            <option value='0'>fecha</option>
+                            <option value='1'>fabricación</option>
+                            <option value='2'>marca</option>
+                            <option value='3'>submarca</option>
+                            <option value='4'>tipo</option>
+                        </select>
+                    </div>
                     <div className='user-history'>
-                        {rows}
+                        <h2>Tus tequilas registrados:</h2>
+                        <Grid container>
+                            {rows}
+                        </Grid>
                     </div>
                 </div>
             </div>
-
-            // <div className="table-responsive">
-            // <Grid container align="stretch" direction="row">
-            //     {rows}
-            //     </Grid>
-            // </div>
         )
     }
 }
