@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import TodoStore from "../stores/Store"
 import TodoActions from "../actions/Action"
 
-export default class Tequila extends Component {
+export default class Provider extends Component {
     state = {
         listProvider: TodoStore.getListProvider(),
     }
