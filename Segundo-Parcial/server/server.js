@@ -73,12 +73,14 @@ app.get('/api/user/:username', (req, res)=>{
                 if (tequila.serial_numbers.includes(tequisquiapan)) {
                     my_tequila = Object.assign({}, tequila);
                     delete my_tequila.serial_numbers;
+                    my_tequila.my_serial = tequisquiapan;
                     found = true;
                     return true;
                 }
             });
             if (found) {
                 my_tequila.brand = provider.brand;
+                my_tequila.brand_uuid = provider.uuid;
                 history.push(my_tequila);
                 my_tequila = null;
                 found = false;
