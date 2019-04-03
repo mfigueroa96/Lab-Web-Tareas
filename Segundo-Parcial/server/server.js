@@ -29,7 +29,11 @@ app.get('/api/tequila/:key', (req, res) => {
                 return true;
             }
         });
-        if (found) return true;
+        if (found) {
+            my_tequila.brand = provider.brand;
+            my_tequila.brand_uuid = provider.uuid;
+            return true;
+        }
     });
 
     res.send({ status: 200, my_tequila, key });
