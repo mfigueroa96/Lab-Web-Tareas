@@ -30,7 +30,9 @@ export default class Tequila extends Component {
 
     render() {
         return (this.state.tequila_exists) ?
-            <div>{this.state.tequila.name}</div>
+            <div>
+                
+            </div>
         : <Redirect to='/' />
     }
 }

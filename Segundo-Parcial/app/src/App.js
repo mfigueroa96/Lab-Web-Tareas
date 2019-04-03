@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Tequila from './components/Tequila';
+import Home from './components/Home';
+import './App.css';
 
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -15,6 +17,7 @@ import MenuRouter from './components/MenuRouter';
 export default class App extends Component {
     render() {
         return <Router>
+            <Route exact path='/' component={Home} />
             <Route exact path='/tequila/:tequilaKey' component={Tequila} />
         </Router>
     }
