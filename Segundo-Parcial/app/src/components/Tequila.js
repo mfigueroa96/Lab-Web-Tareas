@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import TodoStore from "../stores/Store"
 import TodoActions from "../actions/Action"
 //var TodoActions = require('../actions/Action.js');
@@ -30,33 +30,46 @@ export default class Tequila extends Component {
     
 
     render() {
-        // return (this.state.tequila_exists) ?
-        return <div className='tequila-section'>
-            <div className='tequila-header'>
-                <h1>Tequilas de México S.A. de C.V.</h1>
-            </div>
-            <Grid container className='tequila-info'>
-                <Grid row xl={6} lg={6} md={6} sm={4} className='tequila-info-left'>
-                    <div className='tequila-description'>
-                        <div className='tequila-name'>Tequila 1800 Reposado</div>
-                        <div className='tequila-brand'>Esta bebida es producida por {1800}</div>
-                        <div className='tequila-serial-no'>NUM-SERIE-OK?</div>
-                        <div className='tequila-attributes'>
-                            <TequilaAttribute prop='Pureza' value='' />
-                            <TequilaAttribute prop='Salida de barrica' value='' />
-                            <TequilaAttribute prop='Destilación' value='' />
-                            <TequilaAttribute prop='Año de destilación' value='' />
-                            <TequilaAttribute prop='Lugar de destilación' value='' />
+        var img = this.state.listTequila.tequila.uuid !== undefined ? this.state.listTequila.tequila.uuid.split('-').join('') : '';
+
+        return (this.state.listTequila.exist) ?
+            <div className='tequila-section'>
+                <div className='tequila-header'>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <Link to='/'>
+                            <img src='/assets/back.png' />
+                            Regresar al inicio
+                        </Link>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <img id='tequila-icon-2' src='/assets/tequila-icon-2.png' />
+                        <h1>Tequilas de México S.A. de C.V.</h1>
+                    </div>
+                </div>
+                <Grid container className='tequila-info'>
+                    <Grid item xl={6} lg={6} md={6} sm={4} className='tequila-info-left'>
+                        <div className='tequila-description'>
+                            <div className='tequila-name'>{this.state.listTequila.tequila.name}</div>
+                            <div className='tequila-brand'>Esta bebida es producida por {this.state.listTequila.tequila.brand}</div>
+                            <div className='tequila-serial-no'>{this.state.listTequila.tequila.uuid}</div>
+                            <div className='tequila-attributes'>
+                                <TequilaAttribute prop='Pureza' value={this.state.listTequila.tequila.purity} />
+                                <TequilaAttribute prop='Salida de barrica' value={this.state.listTequila.tequila.date_of_release} />
+                                <TequilaAttribute prop='Destilación' value={this.state.listTequila.tequila.distillation} />
+                                <TequilaAttribute prop='Año de destilación' value={this.state.listTequila.tequila.year_of_distillation} />
+                                <TequilaAttribute prop='Lugar de destilación' value={this.state.listTequila.tequila.place_of_distillation} />
+                            </div>
                         </div>
-                    </div>
+                    </Grid>
+                    <Grid item xl={6} lg={6} md={6} sm={4} className='tequila-info-right'>
+                        <div className='tequila-img-container'>
+                            <img id='tequila-img' src={`/assets/tequila/${img}.png`} />
+                        </div>
+                    </Grid>
                 </Grid>
-                <Grid row xl={6} lg={6} md={6} sm={4} className='tequila-info-right'>
-                    <div className='tequila-img-container'>
-                        <img id='tequila-img' src={'/assets/tequila/1.png'} />
-                    </div>
-                </Grid>
-            </Grid>
+            </div>
+        : <div>
+            NO
         </div>
-        // : <Redirect to='/' />
     }
 }

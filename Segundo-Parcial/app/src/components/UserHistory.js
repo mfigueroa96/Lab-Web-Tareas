@@ -38,7 +38,9 @@ export default class Provider extends Component {
         }
 
         return (
-            <div>{rows}</div>
+            <div>
+                {rows}
+            </div>
         )
     }
 }

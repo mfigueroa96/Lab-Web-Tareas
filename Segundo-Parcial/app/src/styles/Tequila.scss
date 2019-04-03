@@ -5,14 +5,36 @@
         color: white;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        margin-bottom: 30px;
+
+        img#tequila-icon-2 {
+            width: 80px;
+            vertical-align: top;
+            margin-right: 20px;
+        }
 
         h1 {
-            padding: 20px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.3em;
+            text-decoration: none;
+
+            img {
+                width: 30px;
+            }
         }
     }
 
     .tequila-info {
         padding: 30px;
+        width: 1200px;
+        margin: 0 auto;
 
         .tequila-description {
             > * {
@@ -28,7 +50,7 @@
             }
 
             .tequila-serial-no {
-                font-size: 1.8em;
+                font-size: 1.2em;
             }
         }
     }
@@ -48,6 +70,14 @@
             .tequila-attribute-value {
 
             }
+        }
+    }
+
+    .tequila-img-container {
+        text-align: right;
+
+        #tequila-img {
+            height: 500px;
         }
     }
 }
