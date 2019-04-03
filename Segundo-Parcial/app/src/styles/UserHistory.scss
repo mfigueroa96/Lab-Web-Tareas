@@ -1,3 +1,32 @@
 .user-container {
     padding: 0 50px;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .user-history {
+        margin-top: 20px;
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    }
+
+    .user-sorting {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;
+
+        #sorter {
+            margin-left: 10px;
+            width: 300px;
+            border: none;
+            font-size: 1em;
+            padding: 10px;
+            -webkit-appearance: none;
+        }
+    }
 }

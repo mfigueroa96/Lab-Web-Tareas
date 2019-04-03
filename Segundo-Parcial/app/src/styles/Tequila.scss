@@ -48,4 +48,22 @@
             height: 500px;
         }
     }
+
+    .goto-provider {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        margin-top: 20px;
+
+        a {
+            display: flex;
+            align-items: center;
+            color: black;
+
+            img {
+                width: 80px;
+                margin-left: 10px;
+            }
+        }
+    }
 }

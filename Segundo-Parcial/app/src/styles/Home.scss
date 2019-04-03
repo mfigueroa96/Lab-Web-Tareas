@@ -50,3 +50,32 @@
         }
     }
 }
+
+.login-container {
+    margin: 30px auto;
+
+    h2 {
+        font-size: 2em;
+    }
+
+    form {
+        .field {
+            margin-bottom: 10px;
+
+            p, input {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    button {
+        border: none;
+        font-size: 1.5em;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
