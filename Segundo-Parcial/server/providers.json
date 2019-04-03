@@ -9,33 +9,33 @@
                     "alcohol_degrees": "38.0%",
                     "purity": "100%",
                     "date_of_release": "Dom 05 Ago 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Añejo",
+                    "year_of_distillation": "2016",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "59118275-33e7-4698-b47b-f94c1f1bba9b",
                     "name": "1800 Cristalino",
-                    "alcohol_degrees": "",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Jue 31 May 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Cristalino",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "41599455-be8a-41c9-b8e8-ccd40483840e",
                     "name": "1800 Reposado",
-                    "alcohol_degrees": "",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Jue 03 Ene 2019",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Reposado",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 }
@@ -46,37 +46,37 @@
             "tequilas": [
                 {
                     "uuid": "8c105ebe-8570-4b2a-b0ee-fafe0a3a6ba2",
-                    "name": "Blanco",
-                    "alcohol_degrees": "",
+                    "name": "Don Julio Blanco",
+                    "alcohol_degrees": "38%",
                     "purity": "100%",
                     "date_of_release": "Vie 22 Feb 2019",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Blanco",
+                    "year_of_distillation": "2019",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "c1c18f31-af81-41b1-8ef3-f32986846520",
-                    "name": "Añejo",
-                    "alcohol_degrees": "",
+                    "name": "Don Julio Añejo",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Sab 01 Dic 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Añejo",
+                    "year_of_distillation": "2015",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "dd92cfe0-ba2b-42b6-8563-bcd5915bac02",
-                    "name": "Reposado",
-                    "alcohol_degrees": "",
+                    "name": "Don Julio Reposado",
+                    "alcohol_degrees": "38%",
                     "purity": "100%",
                     "date_of_release": "Vie 11 Ene 2019",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Reposado",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 }
@@ -87,37 +87,37 @@
             "tequilas": [
                 {
                     "uuid": "b9689b66-6d7f-4c4e-9501-befb2a7e2c50",
-                    "name": "Reposado",
-                    "alcohol_degrees": "",
+                    "name": "Herradura Reposado",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Mar 17 Jul 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Reposado",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "b83e9d5e-c251-400b-b597-e07323ba352f",
-                    "name": "Plata",
-                    "alcohol_degrees": "",
+                    "name": "Herradura Plata",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Dom 09 Sep 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Plata",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "5a885171-e13a-48b0-8c8b-3bea2deed7d2",
-                    "name": "Supremo",
-                    "alcohol_degrees": "",
+                    "name": "Herradura Supremo",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Jue 05 Abr 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Supremo",
+                    "year_of_distillation": "2008",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 }
@@ -128,37 +128,37 @@
             "tequilas": [
                 {
                     "uuid": "894e9449-a3db-44da-8a5e-c830ad631fee",
-                    "name": "Cristalino",
-                    "alcohol_degrees": "",
+                    "name": "Jose Cuervo Cristalino",
+                    "alcohol_degrees": "25%",
                     "purity": "100%",
                     "date_of_release": "Jue 12 Abr 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Cristalino",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "00921e7c-8e31-40cc-b84c-af244c98b7b2",
-                    "name": "Plata",
-                    "alcohol_degrees": "",
+                    "name": "Jose Cuervo Plata",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Mie 12 Dic 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Plata",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
                     "uuid": "9179d409-7643-4613-abd2-0eec8e04aaab",
-                    "name": "Reposado",
-                    "alcohol_degrees": "",
+                    "name": "Jose Cuervo Reposado",
+                    "alcohol_degrees": "38%",
                     "purity": "100%",
                     "date_of_release": "Vie 05 Oct 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Reposado",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 }
@@ -169,37 +169,37 @@
             "tequilas": [
                 {
                     "uuid": "adba5d26-a074-4121-aecb-18131ca3f79c",
-                    "name": "Añejo",
-                    "alcohol_degrees": "",
+                    "name": "Mucha Liga Añejo",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Mar 05 Jun 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Añejo",
+                    "year_of_distillation": "2016",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
-                    "uuid": "2f7fdc3d-0a3f-491f-b620-a3f0b091e5c6\n",
-                    "name": "Cristalino",
-                    "alcohol_degrees": "",
+                    "uuid": "2f7fdc3d-0a3f-491f-b620-a3f0b091e5c6",
+                    "name": "Mucha Liga Cristalino",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Mar 24 Abr 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Cristalino",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 },
                 {
-                    "uuid": "a2a491df-afdd-492c-9260-4f4a6be42bd0\n",
-                    "name": "Reposado",
-                    "alcohol_degrees": "",
+                    "uuid": "a2a491df-afdd-492c-9260-4f4a6be42bd0",
+                    "name": "Mucha Liga Reposado",
+                    "alcohol_degrees": "40%",
                     "purity": "100%",
                     "date_of_release": "Lun 24 Dic 2018",
-                    "distillation": "",
-                    "year_of_distillation": "",
-                    "place_of_distillation": "",
+                    "distillation": "Reposado",
+                    "year_of_distillation": "2018",
+                    "place_of_distillation": "Tequila, Jal, Mex",
                     "serial_numbers": [
                     ]
                 }
