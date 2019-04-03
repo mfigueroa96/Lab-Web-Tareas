@@ -25,12 +25,12 @@ class API {
   getProviderInfo(id) {
     axios.get(`${constants.API}/provider/`+id)
       .then(response => {
-        if (response.data != null) {
+        if (response.data.my_provider != null) {
             console.log(response.data);
             ServerActions.receiveProviderInfo(response.data.my_provider);
         }
         else {
-          ServerActions.receiveProviderInfo({"provider_exists": "false"});
+          ServerActions.receiveProviderInfo({"uuid": constants.PROVIDER_NOT_FOUND});
         }
     });
   }
@@ -38,12 +38,12 @@ class API {
   getUserHistory(id, sort) {
     axios.get("${constants.API}/user/"+id+"?sort="+sort)
       .then(response => {
-        if (response.data != null) {
+        if (response.data.history != null) {
             console.log(response.data);
             ServerActions.receiveUserHistory(response.data.history);
         }
         else {
-          ServerActions.receiveUserHistory({"provider_exists": "false"});
+          ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});
         }
     });
   }
