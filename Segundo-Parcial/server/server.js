@@ -13,6 +13,26 @@ function normalizeKey(key){
     return key.replace(/-/g, "");
 }
 
+app.get('/api/provider/:brand', (req, res) => {
+    var brand = req.params.brand;
+    var my_provider = null;
+
+    my_provider = Object.assign({}, PROVIDERS.find(provider => provider.brand == brand));
+    my_provider.tequilas.some(tequila => {
+        delete tequila.uuid;
+        delete tequila.alcohol_degrees;
+        delete tequila.purity;
+        delete tequila.date_of_release;
+        delete tequila.distillation;
+        delete tequila.year_of_distillation;
+        delete tequila.place_of_distillation;
+        delete tequila.serial_numbers;
+    });
+
+
+    res.send({ status: 200, my_provider, brand });
+});
+
 app.get('/api/tequila/:key', (req, res) => {
     var key = req.params.key;
 

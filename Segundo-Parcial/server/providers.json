@@ -3,6 +3,8 @@
         {
             "uuid": "bab8c233-397b-47e7-bfde-53d3d6d36090",
             "brand": "1800",
+            "contact_phone": "5477-589-544",
+            "contact_mail": "contacto@2019.com",
             "tequilas": [
                 {
                     "uuid": "fa077244-aaaf-4f2c-8c01-89fbef53bb92",
@@ -48,6 +50,8 @@
         {
             "uuid": "e852bec7-1bfe-425f-8217-9c2aa4c273aa",
             "brand": "Don Julio",
+            "contact_phone": "5609-425-210",
+            "contact_mail": "contacto@donjulius.com",
             "tequilas": [
                 {
                     "uuid": "8c105ebe-8570-4b2a-b0ee-fafe0a3a6ba2",
@@ -93,6 +97,8 @@
         {
             "uuid": "d3c448ea-c6b8-4aa6-989d-99d678895ee6",
             "brand": "Herradura",
+            "contact_phone": "5556-951-914",
+            "contact_mail": "contacto@herradura.com",
             "tequilas": [
                 {
                     "uuid": "b9689b66-6d7f-4c4e-9501-befb2a7e2c50",
@@ -138,6 +144,8 @@
         {
             "uuid": "8fe15e29-8a58-4848-b905-d8dd61a16501",
             "brand": "Jose Cuervo",
+            "contact_phone": "5634-028-576",
+            "contact_mail": "contacto@joecrow.com",
             "tequilas": [
                 {
                     "uuid": "894e9449-a3db-44da-8a5e-c830ad631fee",
@@ -183,6 +191,8 @@
         {
             "uuid": "bd6a61f2-7235-4400-9058-a9562d580c5b",
             "brand": "Mucha Liga",
+            "contact_phone": "5145-605-807",
+            "contact_mail": "contacto@muchalucha.com",
             "tequilas": [
                 {
                     "uuid": "adba5d26-a074-4121-aecb-18131ca3f79c",
