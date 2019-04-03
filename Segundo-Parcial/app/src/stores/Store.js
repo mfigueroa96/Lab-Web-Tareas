@@ -81,7 +81,7 @@ AppDispatcher.register(function(payload) {
       var newTodoP =  action.response;
       _storeP.provider = newTodoP
       console.log(newTodoP)
-      if(newTodoP.uuid != AppConstants.PROVIDER_NOT_FOUND){
+      if(newTodo.uuid != AppConstants.PROVIDER_NOT_FOUND){
         _storeP.exist = true
       }else{
         _storeP.exist = false
@@ -92,18 +92,17 @@ AppDispatcher.register(function(payload) {
     case AppConstants.GET_USER_RESPONSE:
       var newTodoU =  action.response;
       console.log(newTodoU)
-      if(newTodoU == AppConstants.USER_NOT_FOUND){
+      if(newTodoU.length > 0){
         if(_storeU.list.length<1){
           _storeU.list.push(newTodoU);
         }else{
           _storeU.list.pop();
           _storeU.list.push(newTodoU);
         }
-        _storeU.exist= true;
       }else{
+        _storeU.list = {}
         _storeU.exist = false
       }
-      
       TodoStore.emit(CHANGE_EVENT);
       break;
     default:
