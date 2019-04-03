@@ -5,27 +5,27 @@ import TodoActions from "../actions/Action"
 
 export default class Tequila extends Component {
     state = {
-        listTequila: TodoStore.getListTequila(),
+        listProvider: TodoStore.getListProvider(),
     }
 
     getInitialState =() => {
-        this.setState({listTequila: TodoActions.getTequilaInfo(this.props.match.params.tequilaKey) });
+        this.setState({listTequila: TodoActions.getProviderInfo(this.props.match.params.providerKey) });
     }
 
     componentDidMount() {
         TodoStore.addChangeListener(this._onChange);
-        TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
+        TodoActions.getProviderInfo(this.props.match.params.providerKey);
     }
 
     _onChange = () => {
-        this.setState({listTequila: TodoStore.getListTequila()});
+        this.setState({listProvider: TodoStore.getListProvider()});
         console.log(this.state)
     }
     
 
     render() {
-        return (this.state.listTequila.exist) ?
-            <div>{this.state.listTequila.tequila.uuid}</div>
-        : <div><p>Your Tequila is chafa</p></div>
+        return (
+            <div>{this.state.listProvider.provider.name}</div>
+        )
     }
 }

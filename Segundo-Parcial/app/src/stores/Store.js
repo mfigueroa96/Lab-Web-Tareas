@@ -14,13 +14,12 @@ var CHANGE_EVENT = 'change';
 
 // Define the store as an empty array
 var _storeT = {
-  list: [],
-  editing: false
+  tequila: {},
+  exist: false
 };
 
 var _storeP = {
-  list: [],
-  editing: false
+  provider: {}
 };
 
 var _storeU = {
@@ -59,32 +58,26 @@ var TodoStore = ObjectAssign( {}, EventEmitter.prototype, {
 AppDispatcher.register(function(payload) {
 
   var action = payload.action;
-
+  console.log(action)
   switch(action.actionType) {
-
+    
     case AppConstants.GET_TEQUIINFO_RESPONSE:
-        console.log(action.response);
+    console.log("HERE")  
+    console.log(action.response);
       // Construct the new todo string
       var newTodo = action.response;
 
-      // Add the new todo to the list
-      if(_storeT.list.length<1){
-        _storeT.list.push(newTodo);
+      _storeT.tequila = newTodo
+      if(newTodo.uuid === AppConstants.NOT_ACCEPTED){
+        _storeT.exist = false
       }else{
-        _storeT.list.pop();
-        _storeT.list.push(newTodo);
+        _storeT.exist = true
       }
       TodoStore.emit(CHANGE_EVENT);
       break;
     case AppConstants.GET_PROVIDER_RESPONSE:
       var newTodoP =  action.response;
-
-      if(_storeP.list.length<1){
-        _storeP.list.push(newTodoP);
-      }else{
-        _storeP.list.pop();
-        _storeP.list.push(newTodoP);
-      }
+      _storeP.provider = newTodoP
       TodoStore.emit(CHANGE_EVENT);
       break;
     case AppConstants.GET_USER_RESPONSE:
