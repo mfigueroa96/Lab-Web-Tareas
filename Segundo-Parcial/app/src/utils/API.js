@@ -28,7 +28,7 @@ class API {
       .then(response => {
         if (response.data != null) {
             console.log(response.data);
-            ServerActions.receiveProviderInfo(response.data);
+            ServerActions.receiveProviderInfo(response);
         }
         else {
           ServerActions.receiveProviderInfo({"provider_exists": "false"});
@@ -37,11 +37,11 @@ class API {
   }
 
   getUserHistory(id) {
-    axios.get(`${constants.API}/provider/`+id)
+    axios.get(`${constants.API}/user/`+id)
       .then(response => {
         if (response.data != null) {
             console.log(response.data);
-            ServerActions.receiveUserHistory(response.data);
+            ServerActions.receiveUserHistory(response.data.history);
         }
         else {
           ServerActions.receiveUserHistory({"provider_exists": "false"});

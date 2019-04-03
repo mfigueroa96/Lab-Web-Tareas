@@ -15,7 +15,7 @@ var CHANGE_EVENT = 'change';
 // Define the store as an empty array
 var _storeT = {
   tequila: {},
-  exist: false
+  exist: true
 };
 
 var _storeP = {
@@ -82,8 +82,8 @@ AppDispatcher.register(function(payload) {
       break;
     case AppConstants.GET_USER_RESPONSE:
       var newTodoU =  action.response;
-
-      if(_storeP.list.length<1){
+      console.log(newTodoU)
+      if(_storeU.list.length<1){
         _storeU.list.push(newTodoU);
       }else{
         _storeU.list.pop();

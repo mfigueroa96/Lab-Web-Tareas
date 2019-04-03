@@ -4,23 +4,15 @@ import Tequila from './components/Tequila';
 import Provider from './components/Provider';
 import Home from './components/Home';
 import './App.css';
-
-import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
-
-import NavBar from './components/NavBar';
-import AgregarElementoComponent from './components/AgregarElementoComponent';
-import ItemsList from './components/ItemList';
-import MenuRouter from './components/MenuRouter';
+import UserHistory from './components/UserHistory'
 
 export default class App extends Component {
     render() {
         return <Router>
             <Route exact path='/' component={Home} />
             <Route exact path='/tequila/:tequilaKey' component={Tequila} />
-            <Route exact path='/tequila/:providerKey' component={Provider} />
+            <Route exact path='/provider/:providerKey' component={Provider} />
+            <Route exact path='/user/:userKey' component={UserHistory} />
         </Router>
     }
 }
