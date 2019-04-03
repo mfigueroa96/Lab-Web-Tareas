@@ -1,6 +1,7 @@
 {
     "providers": [
         {
+            "uuid": "bab8c233-397b-47e7-bfde-53d3d6d36090",
             "brand": "1800",
             "tequilas": [
                 {
@@ -42,6 +43,7 @@
             ]
         },
         {
+            "uuid": "e852bec7-1bfe-425f-8217-9c2aa4c273aa",
             "brand": "Don Julio",
             "tequilas": [
                 {
@@ -83,6 +85,7 @@
             ]
         },
         {
+            "uuid": "d3c448ea-c6b8-4aa6-989d-99d678895ee6",
             "brand": "Herradura",
             "tequilas": [
                 {
@@ -124,6 +127,7 @@
             ]
         },
         {
+            "uuid": "8fe15e29-8a58-4848-b905-d8dd61a16501",
             "brand": "Jose Cuervo",
             "tequilas": [
                 {
@@ -165,6 +169,7 @@
             ]
         },
         {
+            "uuid": "bd6a61f2-7235-4400-9058-a9562d580c5b",
             "brand": "Mucha Liga",
             "tequilas": [
                 {
