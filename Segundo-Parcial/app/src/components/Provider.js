@@ -44,7 +44,7 @@ export default class Provider extends Component {
           <div className='provider-section'>
             <SectionHeader />
             <Grid container className='provider-info'>
-              <Grid item xl ={6} lg={6} md={6} sm={6}>
+              <Grid item xl ={6} lg={6} md={6} sm={12}>
               <div className= 'provider-container'>
                 <h1>Tequila {data.brand}</h1>
                 <p>Correo Electronico:{data.contact_mail}</p>
@@ -56,7 +56,7 @@ export default class Provider extends Component {
               </div>
 
             </Grid>
-            <Grid item xl ={6} lg={6} md={6} sm={6}>
+            <Grid item xl ={6} lg={6} md={6} sm={12}>
               <div className='tequila-img-container'>
                   <img className='tequila-img' src={`/assets/provider/${img}.png`} />
               </div>
