@@ -34,11 +34,11 @@ export default class Provider extends Component {
 
     render() {
         var rows = [];
-        var data = this.state.listUser.list[0];
-        console.log(data)
+        var data = this.state.listUser.list;
+        // console.log(data)
         if(data != undefined && data.length > 0){
             data.forEach((item, i) => {
-                console.log(item)
+                // console.log(item)
             rows.push(<ResultItem key={i} element={item} user={this.props.match.params.userKey}></ResultItem>);
             });
         }

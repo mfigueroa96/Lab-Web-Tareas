@@ -23,17 +23,19 @@ export default class Home extends Component {
             <Header />
             <div className='login-container'>
                 <h2>¿Tienes cuenta? Ingresa aquí.</h2>
-                <form>
-                    <div className='field'>
-                        <p>Nombre de usuario</p>
-                        <Input id='login-username' placeholder='miusuario' />
-                    </div>
-                    <div className='field'>
-                        <p>Contraseña</p>
-                        <Input id='login-password' placeholder='123456' type='password' />
-                    </div>
-                    <button onClick={this.accessBtn_Click} id='access-btn'>Acceder a tu cuenta</button>
-                </form>
+                <div style={{textAlign: 'center'}}>
+                    <form>
+                        <div className='field'>
+                            <p>Nombre de usuario</p>
+                            <Input fullWidth={true} id='login-username' placeholder='miusuario' />
+                        </div>
+                        <div className='field'>
+                            <p>Contraseña</p>
+                            <Input fullWidth={true} id='login-password' placeholder='123456' type='password' />
+                        </div>
+                        <button onClick={this.accessBtn_Click} id='access-btn'>Acceder a tu cuenta</button>
+                    </form>
+                </div>
             </div>
             </div>
         ) : <Redirect to={'/user/' + this.state.username} />

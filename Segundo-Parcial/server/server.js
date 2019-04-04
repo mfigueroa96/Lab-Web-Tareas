@@ -66,7 +66,7 @@ app.get('/api/tequila/:key', (req, res) => {
 
 app.get('/api/user/:username', (req, res)=>{
     var username = req.params.username;
-    var sortby = req.query.sortby;
+    var sortby = req.query.sort;
 
     var found = false;
     var history = [];
