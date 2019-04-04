@@ -6,26 +6,37 @@
         width: 1200px;
         margin: 0 auto;
     }
+    p{
+      font-size: .85em;
+    }
+    @media screen and (max-width: 1210px) {
+        .provider-info {
+          padding-top: 0;
+            width: 100%;
+        }
+    }
+    .tequila-img-container
+    {
+        display: block;
+        padding: 30px;
+        text-align: center;
+        height: 700px;
+        padding: 0px;
 
+        @media screen and (max-width: 768px) {
+          height: auto;
+          
+        }
+    }
+    .tequila-img{
+      width: 250px
+    }
 }
+
 .provider-tequila-list
 {
   margin-top: 30px;
   font-size: 1em;
   padding: 30px;
   margin: 0 auto;
-}
-.tequila-img-container
-{
-    display: block;
-    padding: 30px;
-
-    text-align: right;
-    margin-left: auto;
-    margin-right: auto;
-    height: 500px;
-
-}
-.tequila-img{
-  width: 600px
 }

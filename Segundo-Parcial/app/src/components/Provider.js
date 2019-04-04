@@ -44,20 +44,21 @@ export default class Provider extends Component {
           <div className='provider-section'>
             <SectionHeader />
             <Grid container className='provider-info'>
-              <Grid item xl ={6} lg={6} md={6} sm={6}>
+              <Grid item xl ={6} lg={6} md={6} sm={12}>
               <div className= 'provider-container'>
-                <h1 className=''>Tequila {data.brand}</h1>
+                <h1>Tequila {data.brand}</h1>
                 <p>Correo Electronico:{data.contact_mail}</p>
                 <p>Teléfono {data.contact_phone}</p>
                 <div className='provider-tequila-list'>
+                <h3>Listado de Tequilas:</h3>
                   {rows}
                 </div>
               </div>
 
             </Grid>
-            <Grid item xl ={6} lg={6} md={6} sm={6}>
+            <Grid item xl ={6} lg={6} md={6} sm={12}>
               <div className='tequila-img-container'>
-                  <img className='tequila-img' src={`/assets/tequila/${img}.png`} />
+                  <img className='tequila-img' src={`/assets/provider/${img}.png`} />
               </div>
             </Grid>
           </Grid>

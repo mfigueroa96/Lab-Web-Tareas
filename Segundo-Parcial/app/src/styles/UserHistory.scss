@@ -7,6 +7,7 @@
 
     .user-history {
         margin-top: 20px;
+        padding-bottom: 30px;
 
         h2 {
             font-size: 2em;
@@ -27,6 +28,16 @@
             font-size: 1em;
             padding: 10px;
             -webkit-appearance: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 0 20px;
+
+        .user-history {
+            h2 {
+                font-size: 1.5em;
+            }
         }
     }
 }

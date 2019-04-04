@@ -38,8 +38,8 @@ export default class Tequila extends Component {
         return (this.state.listTequila.exist) ?
             <div className='tequila-section'>
                 <SectionHeader />
-                <Grid container className='tequila-info'>
-                    <Grid item xl={6} lg={6} md={6} sm={4} className='tequila-info-left'>
+                <Grid container className='tequila-info' align='stretch' direction='row'>
+                    <Grid item xl={6} lg={6} md={12} sm={12} className='tequila-info-left'>
                         <div className='tequila-description'>
                             <div className='tequila-name'>{this.state.listTequila.tequila.name}</div>
                             <div className='tequila-brand'>Esta bebida es producida por {this.state.listTequila.tequila.brand}</div>
@@ -53,7 +53,7 @@ export default class Tequila extends Component {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xl={6} lg={6} md={6} sm={4} className='tequila-info-right'>
+                    <Grid item xl={6} lg={6} md={12} sm={12} className='tequila-info-right'>
                         <div className='tequila-img-container'>
                             <img id='tequila-img' src={`/assets/tequila/${img}.png`} />
                         </div>
