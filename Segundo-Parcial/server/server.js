@@ -17,7 +17,8 @@ app.get('/api/provider/:brand', (req, res) => {
     var brand = req.params.brand;
     var my_provider = null;
 
-    my_provider = Object.assign({}, PROVIDERS.find(provider => provider.brand == brand));
+    // my_provider = Object.assign({}, PROVIDERS.find(provider => provider.brand == brand));
+    my_provider = JSON.parse(JSON.stringify(PROVIDERS.find(provider => provider.brand == brand)));
     if( my_provider.tequilas !== undefined ) {
         my_provider.tequilas.some(tequila => {
             delete tequila.uuid;
@@ -46,7 +47,7 @@ app.get('/api/tequila/:key', (req, res) => {
         provider.tequilas.some(tequila => {
             var founded = tequila.serial_numbers.find(tequilyta => normalizeKey(tequilyta) == normalizeKey(key));
             if ( founded !== undefined ){
-                my_tequila = Object.assign({}, tequila);
+                my_tequila = JSON.parse(JSON.stringify(tequila));
                 delete my_tequila.serial_numbers;
                 my_tequila.tequila_exists = true;
                 found = true;
@@ -78,7 +79,7 @@ app.get('/api/user/:username', (req, res)=>{
             PROVIDERS.some(provider => {
                 provider.tequilas.some(tequila => {
                     if (tequila.serial_numbers.includes(tequisquiapan.serial_num)) {
-                        my_tequila = Object.assign({}, tequila);
+                        my_tequila = JSON.parse(JSON.stringify(tequila));
                         delete my_tequila.serial_numbers;
                         my_tequila.my_serial = tequisquiapan.serial_num;
                         my_tequila.date_of_purchase = tequisquiapan.date_of_purchase;

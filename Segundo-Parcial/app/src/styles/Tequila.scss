@@ -68,7 +68,37 @@
         }
     }
 
+    @media screen and (max-width: 1210px) {
+        .tequila-info {
+            width: 100%;
+        }
+
+        .tequila-img-container {
+            text-align: center;
+        }
+
+        .goto-provider {
+            a {
+                flex-wrap: wrap;
+
+                padding: 20px;
+                text-align: center;
+
+                img {
+                    margin: 20px auto;
+                    display: block;
+                }
+            }
+        }
+    }
+
     @media screen and (max-width: 768px) {
-        
+        .tequila-img-container {
+    
+            #tequila-img {
+                height: auto;
+                width: 100%;
+            }
+        }
     }
 }

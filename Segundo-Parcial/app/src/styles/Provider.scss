@@ -11,6 +11,7 @@
     }
     @media screen and (max-width: 1210px) {
         .provider-info {
+          padding-top: 0;
             width: 100%;
         }
     }
@@ -21,6 +22,11 @@
         text-align: center;
         height: 700px;
         padding: 0px;
+
+        @media screen and (max-width: 768px) {
+          height: auto;
+          
+        }
     }
     .tequila-img{
       width: 250px

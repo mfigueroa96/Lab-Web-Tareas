@@ -17,6 +17,7 @@ export default class Result extends Component {
                     </div>
                     <div className="result-item-condition">{this.props.element.alcohol_degrees}</div>
                     <div className="result-item-condition">{this.props.element.date_of_releas}</div>
+                    <div className="result-item-condition">{this.props.element.date_of_purchase}</div>
                     <div className="result-item-condition">{this.props.element.brand}</div>
                     <div className="result-item-condition">{this.props.element.place_of_distillation}</div>
                     <div className="result-item-condition">{this.props.element.purity}</div>
