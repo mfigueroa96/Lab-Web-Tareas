@@ -12,10 +12,16 @@ export default class Header extends Component {
 
     tequilaInput_KeyUp = (e) => {
         if (e.keyCode == 13) {
-            this.setState({
-                tequila_key: document.getElementById('tequila-serial-num').value,
-                goto: true
-            });
+            if (document.getElementById('tequila-serial-num').value.length < 32) {
+                e.preventDefault();
+                window.alert('Length incorrecto.');
+            }
+            else {
+                this.setState({
+                    tequila_key: document.getElementById('tequila-serial-num').value,
+                    goto: true
+                });
+            }
         }
     }
 
@@ -28,7 +34,7 @@ export default class Header extends Component {
                     <div className='left-box-content'>
                         <h1>Tequilas de<br/>México S.A. de C.V.</h1>
                         <div className='search-box'>
-                            <input onKeyUp={this.tequilaInput_KeyUp} id='tequila-serial-num' />
+                            <input autoComplete='off' onKeyUp={this.tequilaInput_KeyUp} id='tequila-serial-num' />
                         </div>
                     </div>
                 </div>

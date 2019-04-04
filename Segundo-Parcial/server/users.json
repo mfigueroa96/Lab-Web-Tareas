@@ -22,7 +22,7 @@
             ]
         },
         {
-            "username": "johnwick69",
+            "username": "johnwick690",
             "tequilas": [
                 {
                     "serial_num": "c9505a1a-34fd-4b8b-a8f1-03cb17543b72",
@@ -35,6 +35,10 @@
                 {
                     "serial_num": "3b2b0176-6d2e-4d4d-9b1f-01bb7f62187f",
                     "date_of_purchase": "Mon Apr 23 2018"
+                },
+                {
+                    "serial_num": "495c7f81-3227-4454-9a81-21d5512318a4",
+                    "date_of_purchase": "Thu Dec 13 2018"
                 }
             ]
         },

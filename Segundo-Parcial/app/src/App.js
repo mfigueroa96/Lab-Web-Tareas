@@ -13,7 +13,6 @@ export default class App extends Component {
             <Route exact path='/tequila/:tequilaKey' component={Tequila} />
             <Route exact path='/provider/:providerKey' component={Provider} />
             <Route exact path='/user/:userKey' component={UserHistory} />
-            <Route exact path='/user/:userKey/tequila/:tequilaKey' component={Tequila} />
         </Router>
     }
 }

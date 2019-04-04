@@ -16,7 +16,6 @@ export default class Home extends Component {
             access: true
         })
     }
-
     render() {
         return !this.state.access ? (
             <div>
@@ -35,6 +34,13 @@ export default class Home extends Component {
                         </div>
                         <button onClick={this.accessBtn_Click} id='access-btn'>Acceder a tu cuenta</button>
                     </form>
+                </div>
+                <div className='providers-list'>
+                    <img src='/assets/provider/8fe15e298a584848b905d8dd61a16501.png' />
+                    <img src='/assets/provider/bab8c233397b47e7bfde53d3d6d36090.png' />
+                    <img src='/assets/provider/bd6a61f2723544009058a9562d580c5b.png' />
+                    <img src='/assets/provider/d3c448eac6b84aa6989d99d678895ee6.png' />
+                    <img src='/assets/provider/e852bec71bfe425f82179c2aa4c273aa.png' />
                 </div>
             </div>
             </div>
