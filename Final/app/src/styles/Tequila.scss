@@ -1,0 +1,104 @@
+.tequila-section {
+    .tequila-info {
+        padding: 30px;
+        padding-top: 0;
+        width: 1200px;
+        margin: 0 auto;
+
+        .tequila-description {
+            > * {
+                margin-bottom: 10px;
+            }
+
+            .tequila-name {
+                font-size: 3em;
+            }
+
+            .tequila-brand {
+                font-size: 2em;
+            }
+
+            .tequila-serial-no {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .tequila-attributes {
+        margin-top: 30px;
+
+        .tequila-attribute {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+
+            .tequila-attribute-prop {
+                font-weight: 700;
+                margin-right: 10px;
+            }
+
+            .tequila-attribute-value {
+
+            }
+        }
+    }
+
+    .tequila-img-container {
+        text-align: right;
+
+        #tequila-img {
+            height: 500px;
+        }
+    }
+
+    .goto-provider {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        margin-top: 30px;
+
+        a {
+            display: flex;
+            align-items: center;
+            color: black;
+
+            img {
+                width: 80px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1210px) {
+        .tequila-info {
+            width: 100%;
+        }
+
+        .tequila-img-container {
+            text-align: center;
+        }
+
+        .goto-provider {
+            a {
+                flex-wrap: wrap;
+
+                padding: 20px;
+                text-align: center;
+
+                img {
+                    margin: 20px auto;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .tequila-img-container {
+    
+            #tequila-img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "users": {
+        "82fLvk1h9MfwO7RwlQkCutDYrlH3": {
+            "name": "Martín",
+            "lastName": "Figueroa",
+            "email": "martnfigueroa21@gmail.com",
+            "tequilas": []
+        },
+        "Hc5qlm0GKvhlQa3h2B6gDUkDPie2": {
+            "name": "Luis Juan",
+            "lastName": "Centurión",
+            "email": "luisjuancenturion@gmail.com",
+            "tequilas": []
+        },
+        "VIb3q5kr6DXwcnN9Bd0gEegVbhs2": {
+            "name": "Charlhye",
+            "lastName": "Martínez",
+            "email": "carlosbmtz@gmail.com",
+            "tequilas": []
+        },
+        "kf6rRK1jUdbi0W6BxCkUTdp4Gfv2": {
+            "name": "Patito",
+            "lastName": "Dávila",
+            "email": "patydavilase@gmail.com",
+            "tequilas": []
+        }
+    }
+}
