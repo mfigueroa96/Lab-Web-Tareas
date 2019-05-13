@@ -18,7 +18,8 @@ export default class Home extends Component {
         console.log(username, password);
         firebase.auth().signInWithEmailAndPassword(username, password).then(user => {
             return firebase.auth().currentUser.getIdToken(true).then(token => {
-                document.cookie = '__session=' + token + ';max-age=20';
+                document.cookie = '__session=' + token + ';max-age=600';
+                localStorage.setItem('user', firebase.auth().currentUser.uid);
 
                 this.setState({
                     username: document.getElementById('login-username').value,
@@ -66,6 +67,6 @@ export default class Home extends Component {
                 </div>
             </div>
             </div>
-        ) : <Redirect to={'/user/' + this.state.username} />
+        ) : <Redirect to={'/user/' + localStorage.getItem('user')} />
     }
 }

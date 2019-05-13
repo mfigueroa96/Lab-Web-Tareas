@@ -92,12 +92,13 @@ AppDispatcher.register(function(payload) {
     case AppConstants.GET_USER_RESPONSE:
       var newTodoU =  action.response;
       console.log(newTodoU)
-      if(newTodoU.length > 0){
-       _storeU.list = newTodoU
-      }else{
-        _storeU.list = {}
-        _storeU.exist = false
-      }
+      _storeU.list = newTodoU
+      // if(newTodoU.length){
+      //  _storeU.list = newTodoU
+      // }else{
+      //   _storeU.list = {}
+      //   _storeU.exist = false
+      // }
       TodoStore.emit(CHANGE_EVENT);
       break;
     default:

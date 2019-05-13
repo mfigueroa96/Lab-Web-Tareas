@@ -36,11 +36,20 @@ class API {
   }
 
   getUserHistory(id, sort) {
-    axios.get(`${constants.API}/user/${id}?sort=${sort}`)
+    var query = `{
+      user(key: ["${id}"]) {
+        name
+        lastName
+        email
+      }
+    }`
+
+    axios.get(`${constants.API_USER}?query=${query}`)
       .then(response => {
-        if (response.data.history != null) {
+        response = response.data;
+        if (response.data.user[0] != null) {
             console.log(response.data);
-            ServerActions.receiveUserHistory(response.data.history);
+            ServerActions.receiveUserHistory(response.data.user[0]);
         }
         else {
           ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});

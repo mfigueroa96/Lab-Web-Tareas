@@ -60,7 +60,7 @@ export default class Provider extends Component {
 
     _onChange = () => {
         this.setState({listUser: TodoStore.getListUser()});
-        console.log(this.state.listUser.list)
+        console.log(this.state.listUser)
     }
 
     sorter_ValueChange = (e) => {
@@ -74,7 +74,7 @@ export default class Provider extends Component {
         if(data != undefined && data.length > 0){
             data.forEach((item, i) => {
                 // console.log(item)
-            rows.push(<ResultItem key={i} element={item} user={this.props.match.params.userKey}></ResultItem>);
+                rows.push(<ResultItem key={i} element={item} user={this.props.match.params.userKey}></ResultItem>);
             });
         }
 
@@ -82,7 +82,7 @@ export default class Provider extends Component {
             <div className='user-section'>
                 <SectionHeader />
                 <div className='user-container'>
-                    <h1>Bienvenido, {this.props.match.params.userKey}</h1>
+                    <h1>Bienvenido, {this.state.listUser.list.name} {this.state.listUser.list.lastName}</h1>
                     <div className='user-sorting'>
                         <p>Ordenar por</p>
                         <select id='sorter' onChange={this.sorter_ValueChange}>

@@ -1,14 +1,14 @@
-//instancia de express
 const express = require('express');
-const app = express();
-//modulo de graphql
+const cors = require('cors');
 const express_graphql =require('express-graphql');
-//modulo de escritura de esquemas
 const { buildSchema } = require('graphql');
 const firebase = require('firebase-admin');
-//Modulo de integración de datos
-
+const User = require('../models/User');
 const serviceAccount = require('../ServiceKey.json');
+const config = require('../config');
+
+const app = express();
+app.use(cors({ origin: '*' }));
 
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
@@ -20,36 +20,42 @@ const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(`
+    type User {
+        name: String
+        lastName: String
+        email: String
+        tequilas: [String]
+    }
+
 	type Query {
-		message: String
+		user(key: [String!]): [User]
 	}	
 `);
 
-let getUser = (args) =>{args.name; args.lastName;args.email}
-
 //valor root, decir que puede consultar de los datos en forma de funciones(como lo puedes consultar)
 const root1 = {
-	message: () => {
-        // var r = usersRef.on('value', snapshot => {
-        //     var users = snapshot.val();
-        //     return users['82fLvk1h9MfwO7RwlQkCutDYrlH3'].name
-        // });
-        // return usersRef.child('82fLvk1h9MfwO7RwlQkCutDYrlH3').ref.path.app.toString()
+	user: (args) => {
+        var users = []
+        async function retrieve(key) {
+            return usersRef.child(key).once('value').then(snapshot => {
+                var user = snapshot.val()
+                return new User.Builder(user.name, user.lastName, user.email).build()
+            })
+        }
 
-        return usersRef.child('82fLvk1h9MfwO7RwlQkCutDYrlH3').once('value').then(snapshot => {
-            return snapshot.val().name
+        args.key.forEach(key => {
+            var u = retrieve(key);
+            users.push(u);
         })
+        
+        return users
     }
-    // message: () => {
-    //     getUser()
-    // }
 }
-//Para hacer consultas
-app.use('/graphql', express_graphql({
-//Hay buildear el formato de los datos
+
+app.use('/api', express_graphql({
 	schema: schema1,
-	 rootValue: root1,
-	 graphiql: false
+	rootValue: root1,
+	graphiql: false
 }));
-//Inicio servidor en puerto 3000
-app.listen(5002, ()=>console.log('server on port 5002')); 
+
+app.listen(config.ports.usersAPI, () => {}); 
