@@ -61,4 +61,4 @@ app.use('/api', express_graphql({
 	graphiql: false
 }));
 
-app.listen(config.ports.usersAPI, () => {}); 
+app.listen(config.ports.tequilasGetInfo, () => {}); 
