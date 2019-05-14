@@ -4,6 +4,7 @@ const express_graphql =require('express-graphql');
 const { buildSchema } = require('graphql');
 const firebase = require('firebase-admin');
 const User = require('../models/User');
+const History = require('../models/History');
 const serviceAccount = require('../ServiceKey.json');
 const config = require('../config');
 
@@ -15,6 +16,7 @@ firebase.initializeApp({
     databaseURL: 'https://labweb-239421.firebaseio.com'
 });
 
+const refQueue = firebase.database().ref("queue/tasks");
 const db = firebase.database();
 const usersRef = db.ref('users');
 
@@ -58,4 +60,20 @@ app.use('/api', express_graphql({
 	graphiql: false
 }));
 
-app.listen(config.ports.usersAPI, () => {}); 
+app.get('/addTequilaToUser/:uid/:key',(req, res) =>{
+    var history = new History.Builder(req.params.key, new Date().toString()).build()
+    refQueue.push({ 
+        case: "ADD_TEQUILA", 
+        user: req.params.uid, 
+        data: history
+    },function(error){
+        if(error){
+            res.send({completion: "Failed to complete action"});
+        }else{
+            res.send({completion: "Tequila added to queue"});
+        }
+    });
+
+})
+
+app.listen(config.ports.tequilasAPI, () => {});

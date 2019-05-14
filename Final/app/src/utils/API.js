@@ -56,6 +56,21 @@ class API {
         }
     });
   }
+
+  addTequilaToUser(useruid, tequikey) {
+
+    axios.get(`${constants.API_USERTEQUILA}/${useruid}/${tequikey}`)
+      .then(response => {
+        response = response.data;
+        if (response.data.user[0] != null) {
+            console.log(response.data);
+            ServerActions.receiveUserHistory(response.data.user[0]);
+        }
+        else {
+          ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});
+        }
+    });
+  }
 }
 
 export default new API();
