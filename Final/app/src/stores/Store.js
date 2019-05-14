@@ -101,6 +101,10 @@ AppDispatcher.register(function(payload) {
       // }
       TodoStore.emit(CHANGE_EVENT);
       break;
+    case AppConstants.ADD_TEQUILA_USER:
+      var newTodoTU = action.response;
+      //_storeU.list.push(action.response);
+      TodoStore.emit(CHANGE_EVENT);
     default:
       return true;
   }

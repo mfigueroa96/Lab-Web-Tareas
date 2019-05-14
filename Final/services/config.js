@@ -5,7 +5,8 @@ const config = {
         tequilasAPI: 5003,
         tequilasGetInfo: 5004,
         usersAPI: 5005,
-        usersGetInfo: 5006
+        usersGetInfo: 5006,
+        addTequilaAPI: 5007
     }
 }
 

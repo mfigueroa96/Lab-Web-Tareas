@@ -24,5 +24,11 @@ class ServerActions{
       response: response
     });
   }
+  addTequilaToUser(response) {
+    AppDispatcher.handleServerAction({
+      actionType: constants.ADD_TEQUILA_USER,
+      response: response
+    });
+  }
 }
 export default new ServerActions();

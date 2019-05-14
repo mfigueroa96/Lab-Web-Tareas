@@ -23,6 +23,11 @@ export default class Tequila extends Component {
     componentDidMount() {
         TodoStore.addChangeListener(this._onChange);
         TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
+
+        if (this.getCookie('__session').length != 0) {
+            this.setState({user: true});
+            TodoActions.addTequilaToUser(localStorage.getItem('user'),this.props.match.params.tequilaKey);
+        }
     }
 
     _onChange = () => {

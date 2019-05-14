@@ -16,7 +16,9 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
+    "firebase": "^6.0.2",
     "firebase-admin": "^7.3.0",
+    "firebase-queue": "^1.6.1",
     "graphql": "^14.3.0"
   }
 }

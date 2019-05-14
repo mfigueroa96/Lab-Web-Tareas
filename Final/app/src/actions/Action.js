@@ -32,6 +32,15 @@ class Action{
     
     API.getUserHistory(userkey, sort);
   }
+  addTequilaToUser(useruid,tequilakey) {
+    AppDispatcher.handleViewAction({
+      actionType: constants.USER_HISTORY,
+      user: useruid,
+      tequila: tequilakey
+    });
+    
+    API.addTequilaToUser(tequilakey);
+  }
 
 }
 
