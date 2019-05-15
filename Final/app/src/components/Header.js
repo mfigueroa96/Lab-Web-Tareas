@@ -42,7 +42,7 @@ export default class Header extends Component {
                     <div className='left-box-content'>
                         <h1>Tequilas de<br/>México S.A. de C.V.</h1>
                         <div className='search-box'>
-                            <input autoComplete='off' onKeyUp={this.tequilaInput_KeyUp} id='tequila-serial-num' />
+                            <input autoComplete='off' onKeyUp={this.tequilaInput_KeyUp.bind(this)} id='tequila-serial-num' />
                         </div>
                     </div>
                 </div>

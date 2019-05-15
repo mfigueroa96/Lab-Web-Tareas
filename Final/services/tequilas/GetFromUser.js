@@ -23,7 +23,7 @@ const schema = buildSchema(`
     ${tequilaSchema}
 
     type Query {
-        tequila(key: [String]): [Tequila]
+        tequila(key: [String], order: Int): [Tequila]
     }
 `);
 
@@ -40,6 +40,7 @@ const values = {
                         var tequila = {...tequilas[tequilaKey]};
                         
                         tequila.uuid = tequilaKey;
+                        tequila.url = num;
                         console.log('THE_TEQUILA', tequila)
                         response.push(tequila);
                     }
@@ -50,6 +51,57 @@ const values = {
                 //     temp.uuid = tequilaKey;
                 //     response.push(temp);
                 // }
+            }
+
+            /*
+            Cases:
+            0 -> Date of purchase
+            1 -> Date of release
+            2 -> Brand (alphabetically)
+            3 -> Name (alphabetically)
+            4 -> Distillation (alphabetically)
+            */
+
+            switch (args.order) {
+                case 0:
+                    response.sort((a, b) => {
+                        if (new Date(a.date_of_release) > new Date(b.date_of_release))
+                            return 1;
+                        if (new Date(a.date_of_release) < new Date(b.date_of_release))
+                            return -1;
+                        return 0;
+                    });
+                    break;
+                case 1:
+                    
+                    break;
+                case 2:
+                    response.sort((a, b) => {
+                        if (a.brand > b.brand)
+                            return 1;
+                        if (a.brand < b.brand)
+                            return -1;
+                        return 0;
+                    });
+                    break;
+                case 3:
+                    response.sort((a, b) => {
+                        if (a.name > b.name)
+                            return 1;
+                        if (a.name < b.name)
+                            return -1;
+                        return 0;
+                    });
+                    break;
+                case 4:
+                    history.sort((a, b) => {
+                        if (a.distillation > b.distillation)
+                            return 1;
+                        if (a.distillation < b.distillation)
+                            return -1;
+                        return 0;
+                    });
+                    break;
             }
             
             console.log('RESPONSE', response)
