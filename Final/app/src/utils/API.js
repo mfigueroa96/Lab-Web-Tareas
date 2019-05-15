@@ -10,15 +10,27 @@ import ServerActions from "../actions/ServerActions"
 class API {
 
   getTequilaInfo = (id) => {
-    axios.get(constants.API+"/tequila/"+id)
+    var query = `{
+      tequila(key: ["${id}"]) {
+        name
+        alcohol_degrees
+        purity
+        date_of_release
+        distillation
+        year_of_distillation
+        place_of_distillation
+      }
+    }`
+    axios.get(`${constants.API_TEQUILA}?query=${query}`)
       .then(response => {
-        if (response.data.my_tequila != null) {
+        console.log(response.data)
+        /* if (response.data.my_tequila != null) {
             console.log(response.data.my_tequila);
             ServerActions.receiveTequilaInfo(response.data.my_tequila);
         }
         else {
           ServerActions.receiveTequilaInfo({"uuid": constants.NOT_ACCEPTED});
-        }
+        } */
     });
   }
 
@@ -54,6 +66,15 @@ class API {
         else {
           ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});
         }
+    });
+  }
+
+  addTequilaToUser(useruid, tequikey) {
+
+    axios.get(`${constants.API_USERTEQUILA}/${useruid}/${tequikey}`)
+      .then(response => {
+        response = response.data;
+        console.log(response)
     });
   }
 }

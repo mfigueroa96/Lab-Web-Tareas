@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/UserHistory.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/components</a> UserHistory.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/34</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { Component } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { Redirect } from 'react-router-dom';</span>
+<span class="cstat-no" title="statement not covered" >import firebase from 'firebase';</span>
+<span class="cstat-no" title="statement not covered" >import TodoStore from "../stores/Store"</span>
+<span class="cstat-no" title="statement not covered" >import TodoActions from "../actions/Action"</span>
+<span class="cstat-no" title="statement not covered" >import Grid from '@material-ui/core/Grid';</span>
+<span class="cstat-no" title="statement not covered" >import ResultItem from "../components/ResultItem"</span>
+<span class="cstat-no" title="statement not covered" >import SectionHeader from './SectionHeader';</span>
+<span class="cstat-no" title="statement not covered" >import '../styles/UserHistory.scss';</span>
+&nbsp;
+export default class Provider extends Component <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+    state = {
+        listUser: TodoStore.getListUser(),
+        timeout: false
+    }
+&nbsp;
+    getInitialState =<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        this.setState({listUser: TodoActions.getUserHistory(this.props.match.params.userKey) });</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    componentDidMount</span>() {
+<span class="cstat-no" title="statement not covered" >        TodoStore.addChangeListener(this._onChange);</span>
+<span class="cstat-no" title="statement not covered" >        TodoActions.getUserHistory(this.props.match.params.userKey, '0');</span>
+&nbsp;
+        // firebase.database().ref('users').child(localStorage.getItem('firebase-user'));
+&nbsp;
+        // console.log(firebase.auth().currentUser.metadata.lastSignInTime);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.getCookie('__session').length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({timeout: true});</span>
+        }
+&nbsp;
+        // var logoutTimer = setInterval(() =&gt; {
+        //     var last = new Date(firebase.auth().currentUser.metadata.lastSignInTime)
+        //     var d = new Date();
+        //     var diff = (d.getTime() - last.getTime()) / 1000 / 60;
+        //     if (diff &gt;= 1) {
+        //         firebase.auth().signOut();
+        //         this.setState({timeout: true});
+        //         clearInterval(logoutTimer);
+        //     }
+        // }, 1000 * 10);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    getCookie</span>(cname) {
+        var name = <span class="cstat-no" title="statement not covered" >cname + "=";</span>
+        var decodedCookie = <span class="cstat-no" title="statement not covered" >decodeURIComponent(document.cookie);</span>
+        var ca = <span class="cstat-no" title="statement not covered" >decodedCookie.split(';');</span>
+<span class="cstat-no" title="statement not covered" >        for(var i = 0; i &lt;ca.length; i++) {</span>
+          var c = <span class="cstat-no" title="statement not covered" >ca[i];</span>
+<span class="cstat-no" title="statement not covered" >          while (c.charAt(0) == ' ') {</span>
+<span class="cstat-no" title="statement not covered" >            c = c.substring(1);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          if (c.indexOf(name) == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return c.substring(name.length, c.length);</span>
+          }
+        }
+<span class="cstat-no" title="statement not covered" >        return "";</span>
+    }
+&nbsp;
+    _onChange = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        this.setState({listUser: TodoStore.getListUser()});</span>
+<span class="cstat-no" title="statement not covered" >        console.log(this.state.listUser)</span>
+    }
+&nbsp;
+    sorter_ValueChange = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        TodoActions.getUserHistory(this.props.match.params.userKey, document.getElementById('sorter').value);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    render</span>() {
+        var rows = <span class="cstat-no" title="statement not covered" >[];</span>
+        var data = <span class="cstat-no" title="statement not covered" >this.state.listUser.list;</span>
+        // console.log(data)
+<span class="cstat-no" title="statement not covered" >        if(data != undefined &amp;&amp; data.length &gt; 0){</span>
+<span class="cstat-no" title="statement not covered" >            data.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem, i) =&gt; {</span>
+                // console.log(item)
+<span class="cstat-no" title="statement not covered" >                rows.push(&lt;ResultItem key={i} element={item} user={this.props.match.params.userKey}&gt;&lt;/ResultItem&gt;);</span>
+            });
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return !this.state.timeout ? (</span>
+            &lt;div className='user-section'&gt;
+                &lt;SectionHeader /&gt;
+                &lt;div className='user-container'&gt;
+                    &lt;h1&gt;Bienvenido, {this.state.listUser.list.name} {this.state.listUser.list.lastName}&lt;/h1&gt;
+                    &lt;div className='user-sorting'&gt;
+                        &lt;p&gt;Ordenar por&lt;/p&gt;
+                        &lt;select id='sorter' onChange={this.sorter_ValueChange}&gt;
+                            &lt;option value='0'&gt;fecha&lt;/option&gt;
+                            &lt;option value='1'&gt;fabricación&lt;/option&gt;
+                            &lt;option value='2'&gt;marca&lt;/option&gt;
+                            &lt;option value='3'&gt;submarca&lt;/option&gt;
+                            &lt;option value='4'&gt;tipo&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div className='user-history'&gt;
+                        &lt;h2&gt;Tus tequilas registrados:&lt;/h2&gt;
+                        &lt;Grid container&gt;
+                            {rows}
+                        &lt;/Grid&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        ) : &lt;Redirect to='/' /&gt;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@ const express_graphql =require('express-graphql');
 const { buildSchema } = require('graphql');
 const firebase = require('firebase-admin');
 const User = require('../models/User');
+const History = require('../models/History');
 const serviceAccount = require('../ServiceKey.json');
 const config = require('../config');
 
@@ -15,15 +16,25 @@ firebase.initializeApp({
     databaseURL: 'https://labweb-239421.firebaseio.com'
 });
 
+const refQueue = firebase.database().ref("queue/tasks");
 const db = firebase.database();
 const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(require('../schemas/Tequila'));
 
+// https://medium.com/the-node-js-collection/rethinking-javascript-test-coverage-5726fb272949
+// https://www.google.com/search?q=jasmine+code+coverage+report&rlz=1C5CHFA_enUS828US828&oq=jasmine+code+&aqs=chrome.2.69i57j0l5.5255j0j7&sourceid=chrome&ie=UTF-8
+// https://www.manifold.co/blog/asynchronous-microservices-with-rabbitmq-and-node-js
+
+// Firebase asíncrono
+// https://github.com/FirebaseExtended/firebase-queue#downloading-firebase-queue
+// https://howtofirebase.com/firebase-queue-practical-firestack-a9bba76514a9
+// https://riptutorial.com/firebase/example/23751/firebase-queue-and-worker 
 //valor root, decir que puede consultar de los datos en forma de funciones(como lo puedes consultar)
 const root1 = {
 	user: (args) => {
+	    console.log(args["key"][0]);
         var users = []
         async function retrieve(key) {
             return usersRef.child(key).once('value').then(snapshot => {
@@ -44,7 +55,23 @@ const root1 = {
 app.use('/api', express_graphql({
 	schema: schema1,
 	rootValue: root1,
-	graphiql: false
+	graphiql: true
 }));
 
-app.listen(config.ports.usersAPI, () => {}); 
+app.get('/addTequilaToUser/:uid/:key',(req, res) =>{
+    var history = new History.Builder(req.params.key, new Date().toString()).build()
+    refQueue.push({ 
+        case: "ADD_TEQUILA", 
+        user: req.params.uid, 
+        data: history
+    },function(error){
+        if(error){
+            res.send({completion: "Failed to complete action"});
+        }else{
+            res.send({completion: "Tequila added to queue"});
+        }
+    });
+
+})
+
+app.listen(config.ports.usersAPI, console.log('RUnning usersAPI '+config.ports.usersAPI));

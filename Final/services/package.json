@@ -4,18 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./access/API.js\" \"node ./tequilas/getInfo.js\" \"node ./users/getInfo.js\" \"node ./providers/getInfo.js\" \"node ./users/addTequila.js\" \"node ./users/queue.js\""
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-graphql": "^0.8.0",
+    "firebase": "^6.0.2",
     "firebase-admin": "^7.3.0",
-    "graphql": "^14.3.0"
+    "firebase-queue": "^1.6.1",
+    "graphql": "^14.3.0",
+    "axios": "^0.18.0"
   }
 }

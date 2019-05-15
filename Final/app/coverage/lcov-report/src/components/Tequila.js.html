@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/Tequila.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/components</a> Tequila.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { Component } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { Redirect, Link } from 'react-router-dom';</span>
+<span class="cstat-no" title="statement not covered" >import TodoStore from "../stores/Store"</span>
+<span class="cstat-no" title="statement not covered" >import TodoActions from "../actions/Action"</span>
+//var TodoActions = require('../actions/Action.js');
+//var TodoStore = require('../stores/Store.js').default;
+<span class="cstat-no" title="statement not covered" >import '../styles/Tequila.scss';</span>
+<span class="cstat-no" title="statement not covered" >import { Grid } from '@material-ui/core';</span>
+<span class="cstat-no" title="statement not covered" >import TequilaAttribute from './TequilaAttribute';</span>
+<span class="cstat-no" title="statement not covered" >import SectionHeader from './SectionHeader';</span>
+<span class="cstat-no" title="statement not covered" >import NotFound from './NotFound';</span>
+&nbsp;
+export default class Tequila extends Component <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+    state = {
+        listTequila: TodoStore.getListTequila(),
+        tequila_exists: false
+    }
+&nbsp;
+    getInitialState =<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        this.setState({listTequila: TodoActions.getTequilaInfo(this.props.match.params.tequilaKey) });</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    componentDidMount</span>() {
+<span class="cstat-no" title="statement not covered" >        TodoStore.addChangeListener(this._onChange);</span>
+<span class="cstat-no" title="statement not covered" >        TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (this.getCookie('__session').length != 0) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setState({user: true});</span>
+<span class="cstat-no" title="statement not covered" >            TodoActions.addTequilaToUser(localStorage.getItem('user'),this.props.match.params.tequilaKey);</span>
+        }
+    }
+&nbsp;
+    _onChange = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        this.setState({listTequila: TodoStore.getListTequila()});</span>
+<span class="cstat-no" title="statement not covered" >        console.log(this.state)</span>
+    }
+    
+&nbsp;
+<span class="fstat-no" title="function not covered" >    render</span>() {
+        var img = <span class="cstat-no" title="statement not covered" >this.state.listTequila.tequila.uuid !== undefined ? this.state.listTequila.tequila.uuid.split('-').join('') : '';</span>
+        var provider_img = <span class="cstat-no" title="statement not covered" >this.state.listTequila.tequila.brand_uuid !== undefined ? this.state.listTequila.tequila.brand_uuid.split('-').join('')  : '';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return (this.state.listTequila.exist) ?</span>
+            &lt;div className='tequila-section'&gt;
+                &lt;SectionHeader /&gt;
+                &lt;Grid container className='tequila-info' align='stretch' direction='row'&gt;
+                    &lt;Grid item xl={6} lg={6} md={12} sm={12} className='tequila-info-left'&gt;
+                        &lt;div className='tequila-description'&gt;
+                            &lt;div className='tequila-name'&gt;{this.state.listTequila.tequila.name}&lt;/div&gt;
+                            &lt;div className='tequila-brand'&gt;Esta bebida es producida por {this.state.listTequila.tequila.brand}&lt;/div&gt;
+                            &lt;div className='tequila-serial-no'&gt;{this.state.listTequila.tequila.uuid}&lt;/div&gt;
+                            &lt;div className='tequila-attributes'&gt;
+                                &lt;TequilaAttribute prop='Pureza' value={this.state.listTequila.tequila.purity} /&gt;
+                                &lt;TequilaAttribute prop='Salida de barrica' value={this.state.listTequila.tequila.date_of_release} /&gt;
+                                &lt;TequilaAttribute prop='Destilación' value={this.state.listTequila.tequila.distillation} /&gt;
+                                &lt;TequilaAttribute prop='Año de destilación' value={this.state.listTequila.tequila.year_of_distillation} /&gt;
+                                &lt;TequilaAttribute prop='Lugar de destilación' value={this.state.listTequila.tequila.place_of_distillation} /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xl={6} lg={6} md={12} sm={12} className='tequila-info-right'&gt;
+                        &lt;div className='tequila-img-container'&gt;
+                            &lt;img id='tequila-img' src={`/assets/tequila/${img}.png`} /&gt;
+                        &lt;/div&gt;
+                    &lt;/Grid&gt;
+                &lt;/Grid&gt;
+                &lt;div className='goto-provider'&gt;
+                    &lt;Link to={`/provider/${this.state.listTequila.tequila.brand}`}&gt;
+                        Este artículo fue registrado y verificado por
+                        &lt;img src={`/assets/provider/${provider_img}.png`} /&gt;
+                    &lt;/Link&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        : &lt;NotFound /&gt;
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
