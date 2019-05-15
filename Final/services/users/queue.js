@@ -16,7 +16,7 @@ module.exports = new Queue(refQueue, function(data, progress, resolve, reject){
     console.log("from queue "+data.data.serial_num)
     var query = `
         mutation{
-            history(uid:"${data.user}", key:"${data.data.serial_num}")
+            history(uid: ${JSON.stringify(data.user)}, key:${JSON.stringify(data.data.serial_num)})
         }
         `
     console.log("from queue "+`http://localhost:5006/api?query=${query}`)

@@ -30,16 +30,26 @@ const schema = buildSchema(`
 const values = {
     tequila: (args) => {
         var keys = [...args.key];
-        // console.log('TEQUILA_FROM_USER_ARGS', args);
+        console.log('TEQUILA_FROM_USER_ARGS', keys);
         return tequilasRef.once('value').then(snapshot => {
             var tequilas = snapshot.val();
             var response = []
             for (const tequilaKey in tequilas) {
-                if (keys.includes(tequilaKey)) {
-                    var temp = {...tequilas[tequilaKey]};
-                    temp.uuid = tequilaKey;
-                    response.push(temp);
+                for (const num of tequilas[tequilaKey].serial_numbers) {
+                    if (keys.indexOf(num) >= 0) {
+                        var tequila = {...tequilas[tequilaKey]};
+                        
+                        tequila.uuid = tequilaKey;
+                        console.log('THE_TEQUILA', tequila)
+                        response.push(tequila);
+                    }
                 }
+
+                // if (keys.includes(tequilaKey)) {
+                //     var temp = {...tequilas[tequilaKey]};
+                //     temp.uuid = tequilaKey;
+                //     response.push(temp);
+                // }
             }
             
             console.log('RESPONSE', response)
