@@ -24,15 +24,20 @@ export default class Home extends Component {
                 })
             })
 
-            // return user.getIdToken().then(idToken => {
-            //     const csrfToken = getCookie('csrfToken');
-            //     return postIdTokenToSessionLogin('localhost:5001/sessionLogin', idToken, csrfToken);
-            // })
-
-            // localStorage.setItem('firebase-user', firebase.auth().currentUser.uid);
-
         }).catch(err => {
             console.log(err);
+            switch(err.code){
+                case 'auth/invalid-email':
+                    alert("Usuario inválido");
+                    break;
+                case 'auth/user-not-found':
+                    alert("Usuario no encontrado");
+                    break;
+                case 'auth/wrong-password':
+                    alert("Contraseña incorrecta");
+                    break;
+            }
+
         });
     };
 
