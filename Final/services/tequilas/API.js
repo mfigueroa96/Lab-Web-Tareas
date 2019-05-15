@@ -23,7 +23,7 @@ const schema = buildSchema(`
 const values = {
     tequila: async (args) => {
         var q = `{
-            tequila(key: ${args.key}) {
+            tequila(key: ${JSON.stringify(args.key)}) {
                 name
                 alcohol_degrees
                 purity
@@ -31,16 +31,17 @@ const values = {
                 distillation
                 year_of_distillation
                 place_of_distillation
+                uuid
             }
         }`
-
         var res = await axios.get(`http://localhost:${config.ports.tequilasGetInfo}/graphql?query=${q}`)
+        console.log(res)
         return res.data
         
     },
     verify_tequila: async (args) => {
         var q = `{
-            verify(key: ${args.key})
+            verify(key: ${JSON.stringify(args.key)})
         }`
 
         var res = await axios.get(`http://localhost:${config.ports.verifyTequila}/graphql?query=${q}`)
@@ -48,7 +49,7 @@ const values = {
     },
     from_user: async (args) => {
         var q = `{
-            tequila(key: ${args.key}) {
+            tequila(key: ${JSON.stringify(args.key)}) {
                 name
                 alcohol_degrees
                 purity
@@ -56,15 +57,17 @@ const values = {
                 distillation
                 year_of_distillation
                 place_of_distillation
+                uuid
             }
         }`
 
-        var res = await axios.get(`http://localhost:${config.ports.getUserTequilas}/graphql?query=${q}`)
-        return res.data
+        var res = await axios.get(`http://localhost:${config.ports.getUserTequilas}/graphql?query=${q}`);
+        console.log(res.data.data);
+        return res.data.data.tequila
     },
     from_provider: async (args) => {
         var q = `{
-            tequila(key: ${args.key}) {
+            tequila(key: ${JSON.stringify(args.key)}) {
                 name
                 alcohol_degrees
                 purity
@@ -72,11 +75,15 @@ const values = {
                 distillation
                 year_of_distillation
                 place_of_distillation
+                uuid
             }
         }`
 
+        console.log(q);
+
         var res = await axios.get(`http://localhost:${config.ports.getProvidersTequilas}/graphql?query=${q}`)
-        return res.data
+        console.log(res.data);
+        return res.data.data.tequila
     }
 }
 

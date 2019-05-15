@@ -7,6 +7,8 @@ export default class Result extends Component {
     
     render() {
         console.log(this.props.element)
+        var img = this.props.element.uuid.split('-').join('')
+
         return (
             <Grid item lg={4} md={4} sm={6} xs={12} className="result-item">
                 <div className="result-item-wrap">
@@ -22,7 +24,7 @@ export default class Result extends Component {
                     <div className="result-item-condition">{this.props.element.place_of_distillation}</div>
                     <div className="result-item-condition">{this.props.element.purity}</div>
                     <div className="result-item-condition">{this.props.element.my_serial}</div>
-                    <img className='result-item-img' src={`/assets/tequila/${this.props.element.uuid.split('-').join('')}.png`} />
+                    <img className='result-item-img' src={`/assets/tequila/${img}.png`} />
                 </div>
             </Grid>
         );

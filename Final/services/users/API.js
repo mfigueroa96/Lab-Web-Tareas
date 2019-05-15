@@ -21,34 +21,39 @@ const app = express();
 app.use(cors({ origin: '*' }));
 
 const schema1 = buildSchema(`
+    type History {
+        serial_num : String!
+        date_of_purchase: String!
+    }
+
     type User {
         name: String
         lastName: String
         email: String
-        tequilas: [String]
+        tequilas: [History]
     }
     
     type Query{
         user(key: String!): [User]
         addTequila(uid: String!, key: String!): Boolean!
     }  	
-    type History {
-        serial_num : String!
-        date_of_purchase: String!
-    }
     `);
 
 
 const root1 = {
 	user: async (args) => {
-        console.log(args.key)
 	    var query = `{
             user(key: ["${args.key}"]) {
                 name
                 lastName
                 email
+                tequilas {
+                    serial_num
+                    date_of_purchase
+                }
             }
         }`
+
         var res = await axios.get(`http://localhost:${config.ports.getUserInfo}/graphql?query=${query}`)
         return res.data.data.user
     },

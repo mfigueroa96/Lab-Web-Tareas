@@ -22,11 +22,16 @@ const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(`
+type History {
+    serial_num : String!
+    date_of_purchase: String!
+}
+
 type User {
     name: String
     lastName: String
     email: String
-    tequilas: [String]
+    tequilas: [History]
 }
 
 type Query {
@@ -49,8 +54,14 @@ const root1 = {
         var users = []
         async function retrieve(key) {
             return usersRef.child(key).once('value').then(snapshot => {
-                var user = snapshot.val()
-                return new User.Builder(user.name, user.lastName, user.email).build()
+                var user = snapshot.val();
+                var tequilas = [];
+                for (var tequilaKey in user.tequilas) {
+                    tequilas.push(user.tequilas[tequilaKey]);
+                }
+
+                var u = new User.Builder(user.name, user.lastName, user.email, tequilas).build()
+                return u
             })
         }
 
@@ -58,7 +69,7 @@ const root1 = {
             var u = retrieve(key);
             users.push(u);
         })
-        
+
         return users
     }
 }

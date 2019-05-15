@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./tequilas/GetInfo.js\" \"node ./users/GetInfo.js\" \"node ./providers/GetInfo.js\" \"node ./users/AddTequila.js\" \"node ./users/queue.js\""
+    "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./tequilas/GetInfo.js\" \"node ./users/GetInfo.js\" \"node ./providers/GetInfo.js\" \"node ./users/AddTequila.js\" \"node ./users/queue.js\" \"node ./tequilas/GetFromUser.js\" \"node ./tequilas/GetFromProvider.js\""
   },
   "keywords": [],
   "author": "",
