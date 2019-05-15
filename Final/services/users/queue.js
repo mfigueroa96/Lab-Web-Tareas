@@ -17,11 +17,11 @@ var queue = new Queuee(refQueue, {'numWorkers': 10}, function(data, progress, re
     console.log(data.data.serial_num)
     var query = `
         mutation{
-            history(uid:"${data.user}", key:"${data.data.serial_num}")
+            history(uid: ${JSON.stringify(data.user)}, key:${JSON.stringify(data.data.serial_num)})
         }
         `
     
-    axios.post(`http://localhost:5007/api?query=${query}`)
+    axios.post(`http://localhost:5007?query=${query}`)
     .then(response => {
         if(response.data.data.history == "Success"){
             resolve()
