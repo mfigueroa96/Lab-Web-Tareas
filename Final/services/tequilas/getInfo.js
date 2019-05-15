@@ -55,7 +55,7 @@ const root1 = {
     }
 }
 
-app.use('/api', express_graphql({
+app.use('/graphql', express_graphql({
 	schema: schema1,
 	rootValue: root1,
 	graphiql: false
