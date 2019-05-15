@@ -19,18 +19,7 @@ const db = firebase.database();
 const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
-const schema1 = buildSchema(`
-    type User {
-        name: String
-        lastName: String
-        email: String
-        tequilas: [String]
-    }
-
-	type Query {
-		user(key: [String!]): [User]
-	}	
-`);
+const schema1 = buildSchema(require('../schemas/Tequila'));
 
 //valor root, decir que puede consultar de los datos en forma de funciones(como lo puedes consultar)
 const root1 = {

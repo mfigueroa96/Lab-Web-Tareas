@@ -20,19 +20,11 @@ const tequilasRef = db.ref('tequilas');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(`
-    type Tequila {
-        name: String
-        alcohol_degrees: String
-        purity: String
-        date_of_release: String
-        distillation: String
-        year_of_distillation: String
-        place_of_distillation: String
-    }
+    ${require('../schemas/Tequila')}
 
 	type Query {
 		tequila(key: [String!]): [Tequila]
-	}	
+	}
 `);
 
 //valor root, decir que puede consultar de los datos en forma de funciones(como lo puedes consultar)
@@ -42,7 +34,15 @@ const root1 = {
         async function retrieve(key) {
             return tequilasRef.child(key).once('value').then(snapshot => {
                 var tequila = snapshot.val()
-                return new Tequila.Builder().build()
+                return new Tequila.Builder(tequila.name,
+                    tequila.alcohol_degrees,
+                    tequila.purity,
+                    tequila.date_of_release,
+                    tequila.distillation,
+                    tequila.year_of_distillation,
+                    tequila.place_of_distillation,
+                    tequila.serial_numbers)
+                .build()
             })
         }
 
@@ -61,4 +61,7 @@ app.use('/api', express_graphql({
 	graphiql: false
 }));
 
-app.listen(config.ports.usersAPI, () => {}); 
+const PORT = config.ports.tequilasGetInfo;
+app.listen(PORT, () => {
+    console.log(`Running Get Info Tequilas at ${PORT}`);
+}); 
