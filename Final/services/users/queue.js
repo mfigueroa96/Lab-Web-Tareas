@@ -1,4 +1,4 @@
-const Queuee = require('firebase-queue');
+const Queue = require('firebase-queue');
 const axios = require('axios');
 const firebase = require('firebase-admin');
 const serviceAccount = require('../ServiceKey.json');
@@ -11,18 +11,18 @@ firebase.initializeApp({
 const refQueue = firebase.database().ref("queue");
 
 
-var queue = new Queuee(refQueue, {'numWorkers': 10}, function(data, progress, resolve, reject){
-    progress(10);
-    console.log(data.user)
-    console.log(data.data.serial_num)
+module.exports = new Queue(refQueue, function(data, progress, resolve, reject){
+    console.log("from queue "+data.user)
+    console.log("from queue "+data.data.serial_num)
     var query = `
         mutation{
             history(uid:"${data.user}", key:"${data.data.serial_num}")
         }
         `
-    
-    axios.post(`http://localhost:5007/api?query=${query}`)
+    console.log("from queue "+`http://localhost:5006/api?query=${query}`)
+    axios.post(`http://localhost:5006/api?query=${query}`)
     .then(response => {
+        console.log(response.data)
         if(response.data.data.history == "Success"){
             resolve()
         }else{
@@ -32,4 +32,3 @@ var queue = new Queuee(refQueue, {'numWorkers': 10}, function(data, progress, re
         console.log(error);
     }); 
 })
-

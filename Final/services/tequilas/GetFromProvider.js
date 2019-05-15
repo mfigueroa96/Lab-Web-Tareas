@@ -53,7 +53,7 @@ app.get('/graphql', express_graphql({
     graphiql: false
 }))
 
-onst PORT = config.ports.getProvidersTequilas;
+const PORT = config.ports.getProvidersTequilas;
 app.listen(PORT, () => {
     console.log(`Running Provider's tequilas at ${PORT}`);
 });

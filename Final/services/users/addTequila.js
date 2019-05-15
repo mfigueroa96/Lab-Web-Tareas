@@ -57,10 +57,10 @@ const root1 = {
     }
 }
 
-app.use('/', express_graphql({
+app.use('/api', express_graphql({
 	schema: schema1,
 	rootValue: root1,
-	graphiql: false
+	graphiql: true
 }));
 
 app.listen(config.ports.addTequila, console.log('RUnning addTequila '+config.ports.addTequila));
