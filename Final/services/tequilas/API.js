@@ -4,12 +4,13 @@ const axios = require('axios').default;
 const { buildSchema } = require('graphql');
 const express_graphql = require('express-graphql');
 const config = require('../config');
+const tequilaSchema = require('../schemas/Tequila');
 
 const app = express();
 app.use(cors({ origin: '*' }));
 
 const schema = buildSchema(`
-    ${require('../schemas/Tequila')}
+    ${tequilaSchema}
 
     type Query {
         tequila(key: [String]): [Tequila]
@@ -84,3 +85,6 @@ app.get('/api', express_graphql({
     rootValue: values,
     graphiql: false
 }))
+
+const PORT = config.ports.tequilasAPI;
+app.listen(PORT, console.log(`Running Tequilas API @ ${PORT}`));

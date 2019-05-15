@@ -53,6 +53,7 @@ class API {
         name
         lastName
         email
+        tequilas
       }
     }`
 
@@ -60,8 +61,29 @@ class API {
       .then(response => {
         response = response.data;
         if (response.data.user[0] != null) {
-            console.log(response.data);
-            ServerActions.receiveUserHistory(response.data.user[0]);
+          var user = response.data.user[0];
+          console.log('MY USER IS HERE', user)
+
+
+
+          var query = `{
+            tequila(key: ${user.tequilas.map(tequila => tequila.serial_num)}) {
+              name
+              distillation
+              year_of_distillation
+              alcohol_degrees
+              purity
+              date_of_release
+              place_of_distillation
+            }
+          }`
+
+          axios.get(`${constants.API_TEQUILA}?query=${query}`)
+          .then(response => {
+            user.tequilas = response.data.data;
+            console.log('MY_RESPONSE_TEQUILAS', response.data);
+            ServerActions.receiveUserHistory(user);
+          })
         }
         else {
           ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});

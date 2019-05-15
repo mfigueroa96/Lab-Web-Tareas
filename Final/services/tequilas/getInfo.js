@@ -6,6 +6,7 @@ const firebase = require('firebase-admin');
 const Tequila = require('../models/Tequila');
 const serviceAccount = require('../ServiceKey.json');
 const config = require('../config');
+const tequilaSchema = require('../schemas/Tequila');
 
 const app = express();
 app.use(cors({ origin: '*' }));
@@ -20,7 +21,7 @@ const tequilasRef = db.ref('tequilas');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(`
-    ${require('../schemas/Tequila')}
+    ${tequilaSchema}
 
 	type Query {
 		tequila(key: [String!]): [Tequila]
@@ -61,7 +62,7 @@ app.use('/graphql', express_graphql({
 	graphiql: false
 }));
 
-const PORT = config.ports.tequilasGetInfo;
+const PORT = config.ports.getTequilaInfo;
 app.listen(PORT, () => {
     console.log(`Running Get Info Tequilas at ${PORT}`);
 }); 

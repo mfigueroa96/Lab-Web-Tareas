@@ -7,6 +7,7 @@ const User = require('../models/User');
 const History = require('../models/History');
 const serviceAccount = require('../ServiceKey.json');
 const config = require('../config');
+const userSchema = require('../schemas/User');
 
 const app = express();
 app.use(cors({ origin: '*' }));
@@ -21,7 +22,7 @@ const db = firebase.database();
 const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
-const schema1 = buildSchema(require('../schemas/Tequila'));
+const schema1 = buildSchema(userSchema);
 
 // https://medium.com/the-node-js-collection/rethinking-javascript-test-coverage-5726fb272949
 // https://www.google.com/search?q=jasmine+code+coverage+report&rlz=1C5CHFA_enUS828US828&oq=jasmine+code+&aqs=chrome.2.69i57j0l5.5255j0j7&sourceid=chrome&ie=UTF-8
@@ -55,7 +56,7 @@ const root1 = {
 app.use('/api', express_graphql({
 	schema: schema1,
 	rootValue: root1,
-	graphiql: true
+	graphiql: false
 }));
 
 app.get('/addTequilaToUser/:uid/:key',(req, res) =>{

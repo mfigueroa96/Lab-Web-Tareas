@@ -1,28 +1,39 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios').default;
+const firebase = require('firebase-admin');
 const { buildSchema } = require('graphql');
 const express_graphql = require('express-graphql');
 const config = require('../config');
 const Tequila = require('../models/Tequila');
+const tequilaSchema = require('../schemas/Tequila');
 
 const app = express();
 app.use(cors({ origin: '*' }));
 
+firebase.initializeApp({
+    credential: firebase.credential.cert(serviceAccount),
+    databaseURL: 'https://labweb-239421.firebaseio.com'
+});
+
+const db = firebase.database();
+const tequilasRef = db.ref('tequila');
+
 const schema = buildSchema(`
+    ${tequilaSchema}
+
     type Query {
-        verify(key: String): Boolean
+        tequila(key: [String]): [Tequila]
     }
 `);
 
 const values = {
     tequila: async (args) => {
-        var q = `{
-            info(key: ${args.key})
-        }`
-
-        var res = await axios.get(`http://localhost:${config.ports.tequilasGetInfo}/graphql?query=${q}`)
-        return res.data
+        return tequilasRef.once('value').then(snapshot => {
+            var tequilas = snapshot.val();
+            tequilas.filter(tequila => {
+                return tequila.serial_numbers.some(serial => args.key.indexOf(serial) >= 0)
+            })
+        })
     }
 }
 
@@ -31,3 +42,6 @@ app.get('/api', express_graphql({
     rootValue: values,
     graphiql: false
 }))
+
+const PORT = config.ports.getProvidersTequilas;
+app.listen(PORT, console.log(`Running Get Provider Tequilas @ ${PORT}`));
