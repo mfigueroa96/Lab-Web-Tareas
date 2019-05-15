@@ -58,6 +58,7 @@ const root1 = {
         return res.data.data.user
     },
     addTequila: async (args)=>{
+        console.log("holaholahola")
         var history = new History.Builder(args.key, new Date().toString()).build()
         var completion = true;
         async function pushToQueue(){

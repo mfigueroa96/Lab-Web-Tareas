@@ -33,14 +33,13 @@ const root1 = {
 	tequila: (args) => {
         var users = []
         async function retrieve(key) {
+            console.log("keey "+key)
             return tequilasRef.once('value').then(snapshot =>{
                 var tequilas = snapshot.val()
                 for(i in tequilas)
                 {   
-                    console.log("i     "+i)
                     for(s in tequilas[i].serial_numbers){
                         if(tequilas[i].serial_numbers[s]==key){
-                           console.log(i)
                            var tequila = tequilas[i]
                             return new Tequila.Builder(tequila.name,
                                 tequila.alcohol_degrees,
