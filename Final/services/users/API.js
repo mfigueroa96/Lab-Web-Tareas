@@ -46,7 +46,7 @@ const schema1 = buildSchema(`
 const root1 = {
 	user: (args) => {
 	    console.log(args["key"][0]);
-        /*var users = []
+        var users = []
         async function retrieve(key) {
             return usersRef.child(key).once('value').then(snapshot => {
                 var user = snapshot.val()
@@ -59,7 +59,7 @@ const root1 = {
             users.push(u);
         })
         
-        return users*/
+        return users
     }
 }
 
@@ -85,4 +85,4 @@ app.get('/addTequilaToUser/:uid/:key',(req, res) =>{
 
 })
 
-app.listen(config.ports.tequilasAPI, () => {});
+app.listen(config.ports.usersAPI, console.log('RUnning usersAPI '+config.ports.usersAPI));
