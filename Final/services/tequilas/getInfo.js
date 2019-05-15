@@ -65,4 +65,4 @@ app.use('/graphql', express_graphql({
 const PORT = config.ports.getTequilaInfo;
 app.listen(PORT, () => {
     console.log(`Running Get Info Tequilas at ${PORT}`);
-}); 
+});

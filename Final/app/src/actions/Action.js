@@ -38,8 +38,7 @@ class Action{
       user: useruid,
       tequila: tequilakey
     });
-    
-    API.addTequilaToUser(tequilakey);
+    API.addTequilaToUser(useruid,tequilakey);
   }
 
 }
