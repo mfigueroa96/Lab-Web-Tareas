@@ -22,7 +22,7 @@ export default class Tequila extends Component {
 
     componentDidMount() {
         TodoStore.addChangeListener(this._onChange);
-        //TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
+        TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
 
         if (this.getCookie('__session').length != 0) {
             this.setState({user: true});
@@ -55,7 +55,7 @@ export default class Tequila extends Component {
 
     render() {
         var img = this.state.listTequila.tequila.uuid !== undefined ? this.state.listTequila.tequila.uuid.split('-').join('') : '';
-        var provider_img = this.state.listTequila.tequila.brand_uuid !== undefined ? this.state.listTequila.tequila.brand_uuid.split('-').join('')  : '';
+        var provider_img = this.state.listTequila.tequila.provider_uuid !== undefined ? this.state.listTequila.tequila.provider_uuid.split('-').join('')  : '';
 
         return (this.state.listTequila.exist) ?
             <div className='tequila-section'>
@@ -65,7 +65,7 @@ export default class Tequila extends Component {
                         <div className='tequila-description'>
                             <div className='tequila-name'>{this.state.listTequila.tequila.name}</div>
                             <div className='tequila-brand'>Esta bebida es producida por {this.state.listTequila.tequila.brand}</div>
-                            <div className='tequila-serial-no'>{this.state.listTequila.tequila.uuid}</div>
+                            <div className='tequila-serial-no'>{this.state.listTequila.tequila.provider}</div>
                             <div className='tequila-attributes'>
                                 <TequilaAttribute prop='Pureza' value={this.state.listTequila.tequila.purity} />
                                 <TequilaAttribute prop='Salida de barrica' value={this.state.listTequila.tequila.date_of_release} />

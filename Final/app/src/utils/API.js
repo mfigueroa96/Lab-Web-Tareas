@@ -19,18 +19,20 @@ class API {
         distillation
         year_of_distillation
         place_of_distillation
+        uuid
+        provider
+        provider_uuid
       }
     }`
     axios.get(`${constants.API_TEQUILA}?query=${query}`)
       .then(response => {
-        console.log(response.data)
-        /* if (response.data.my_tequila != null) {
-            console.log(response.data.my_tequila);
-            ServerActions.receiveTequilaInfo(response.data.my_tequila);
+        console.log(response.data.data.tequila[0])
+        if (response.data.data.tequila[0].name != "0") {
+            ServerActions.receiveTequilaInfo(response.data.data.tequila[0]);
         }
         else {
           ServerActions.receiveTequilaInfo({"uuid": constants.NOT_ACCEPTED});
-        } */
+        } 
     });
   }
 

@@ -22,14 +22,14 @@ var queue = new Queuee(refQueue, {'numWorkers': 10}, function(data, progress, re
         `
     
     axios.post(`http://localhost:5007/api?query=${query}`)
-        .then(response => {
-            if(response.data.data.history == "Success"){
-                resolve()
-            }else{
-                reject()
-            }
-        }).catch(function (error) {
-            console.log(error);
-        }); 
+    .then(response => {
+        if(response.data.data.history == "Success"){
+            resolve()
+        }else{
+            reject()
+        }
+    }).catch(function (error) {
+        console.log(error);
+    }); 
 })
 

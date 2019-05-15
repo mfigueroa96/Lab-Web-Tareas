@@ -6,6 +6,7 @@ const firebase = require('firebase-admin');
 const Tequila = require('../models/Tequila');
 const serviceAccount = require('../ServiceKey.json');
 const config = require('../config');
+const TequilaSchema = require('../schemas/Tequila')
 
 const app = express();
 app.use(cors({ origin: '*' }));
@@ -20,7 +21,7 @@ const tequilasRef = db.ref('tequilas');
 
 //nuestro schema, lo que puedes consultar
 const schema1 = buildSchema(`
-    ${require('../schemas/Tequila')}
+    ${TequilaSchema}
 
 	type Query {
 		tequila(key: [String!]): [Tequila]
@@ -32,18 +33,33 @@ const root1 = {
 	tequila: (args) => {
         var users = []
         async function retrieve(key) {
-            return tequilasRef.child(key).once('value').then(snapshot => {
-                var tequila = snapshot.val()
-                return new Tequila.Builder(tequila.name,
-                    tequila.alcohol_degrees,
-                    tequila.purity,
-                    tequila.date_of_release,
-                    tequila.distillation,
-                    tequila.year_of_distillation,
-                    tequila.place_of_distillation,
-                    tequila.serial_numbers)
-                .build()
+            return tequilasRef.once('value').then(snapshot =>{
+                var tequilas = snapshot.val()
+                for(i in tequilas)
+                {   
+                    console.log("i     "+i)
+                    for(s in tequilas[i].serial_numbers){
+                        if(tequilas[i].serial_numbers[s]==key){
+                           console.log(i)
+                           var tequila = tequilas[i]
+                            return new Tequila.Builder(tequila.name,
+                                tequila.alcohol_degrees,
+                                tequila.purity,
+                                tequila.date_of_release,
+                                tequila.distillation,
+                                tequila.year_of_distillation,
+                                tequila.place_of_distillation,
+                                tequila.serial_numbers,
+                                i,
+                                tequila.provider,
+                                tequila.provider_uuid)
+                            .build()
+                        }
+                    }
+                    
+                }
             })
+            
         }
 
         args.key.forEach(key => {
@@ -58,10 +74,10 @@ const root1 = {
 app.use('/graphql', express_graphql({
 	schema: schema1,
 	rootValue: root1,
-	graphiql: false
+	graphiql: true
 }));
 
-const PORT = config.ports.tequilasGetInfo;
+const PORT = config.ports.getTequilaInfo;
 app.listen(PORT, () => {
     console.log(`Running Get Info Tequilas at ${PORT}`);
 });

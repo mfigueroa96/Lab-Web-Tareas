@@ -26,8 +26,13 @@ const values = {
     }
 }
 
-app.get('/api', express_graphql({
+app.get('/graphql', express_graphql({
     schema: schema,
     rootValue: values,
     graphiql: false
 }))
+
+onst PORT = config.ports.getProvidersTequilas;
+app.listen(PORT, () => {
+    console.log(`Running Provider's tequilas at ${PORT}`);
+});
