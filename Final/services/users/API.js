@@ -21,18 +21,7 @@ const db = firebase.database();
 const usersRef = db.ref('users');
 
 //nuestro schema, lo que puedes consultar
-const schema1 = buildSchema(`
-    type User {
-        name: String
-        lastName: String
-        email: String
-        tequilas: [String]
-    }
-
-	type Query {
-		user(key: [String!]): [User]
-	}	
-`);
+const schema1 = buildSchema(require('../schemas/Tequila'));
 
 // https://medium.com/the-node-js-collection/rethinking-javascript-test-coverage-5726fb272949
 // https://www.google.com/search?q=jasmine+code+coverage+report&rlz=1C5CHFA_enUS828US828&oq=jasmine+code+&aqs=chrome.2.69i57j0l5.5255j0j7&sourceid=chrome&ie=UTF-8
