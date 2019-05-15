@@ -63,4 +63,4 @@ app.use('/api', express_graphql({
 	graphiql: false
 }));
 
-app.listen(config.ports.addTequilaAPI, console.log('RUnning addTequila '+config.ports.addTequilaAPI));
+app.listen(config.ports.addTequila, console.log('RUnning addTequila '+config.ports.addTequila));

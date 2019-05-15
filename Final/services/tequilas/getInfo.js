@@ -61,4 +61,4 @@ app.use('/api', express_graphql({
 	graphiql: false
 }));
 
-app.listen(config.ports.tequilasGetInfo, console.log('RUnning  Tequilainfo '+config.ports.tequilasGetInfo));
+app.listen(config.ports.getTequilaInfo, console.log('RUnning  Tequilainfo '+config.ports.getTequilaInfo));
