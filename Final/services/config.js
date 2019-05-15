@@ -1,12 +1,15 @@
 const config = {
     ports: {
-        providersAPI: 5001,
-        providersGetInfo: 5002,
-        tequilasAPI: 5003,
-        tequilasGetInfo: 5004,
-        usersAPI: 5005,
-        usersGetInfo: 5006,
-        addTequilaAPI: 5007
+        usersAPI: 5001,
+        tequilasAPI: 5002,
+        providerAPI: 5003,
+        getUserInfo: 5005,
+        addTequila: 5006,
+        getUserTequilas: 5011,
+        getTequilaInfo: 5007,
+        verifyTequila: 5008,
+        getProvidersTequilas: 5009,
+        getProviderInfo: 5010
     }
 }
 
