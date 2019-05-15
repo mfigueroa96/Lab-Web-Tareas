@@ -16,8 +16,6 @@ export default class Header extends Component {
 
     }
 
-    perform
-
     tequilaInput_KeyUp = function (e) {
         if (e.keyCode == 13) {
             if (document.getElementById('tequila-serial-num').value.length < 32) {
