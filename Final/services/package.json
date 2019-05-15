@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./access/API.js\" \"node ./tequilas/getInfo.js\" \"node ./users/getInfo.js\" \"node ./providers/getInfo.js\" \"node ./users/addTequila.js\" \"node ./users/queue.js\""
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "firebase": "^6.0.2",
     "firebase-admin": "^7.3.0",
     "firebase-queue": "^1.6.1",
-    "graphql": "^14.3.0"
+    "graphql": "^14.3.0",
+    "axios": "^0.18.0"
   }
 }
