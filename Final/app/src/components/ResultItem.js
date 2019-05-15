@@ -13,7 +13,7 @@ export default class Result extends Component {
             <Grid item lg={4} md={4} sm={6} xs={12} className="result-item">
                 <div className="result-item-wrap">
                     <div className="result-item-degrees">
-                        <a href={'/tequila/' + this.props.element.my_serial}>
+                        <a href={'/tequila/' + this.props.element.url}>
                             {this.props.element.name}
                         </a>
                     </div>

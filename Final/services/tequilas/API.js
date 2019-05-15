@@ -23,14 +23,15 @@ type Tequila {
     provider: String
     provider_uuid: String
     uuidType: String
+    url: String
 }
 
-    type Query {
-        tequila(key: [String]): [Tequila]
-        verify_tequila(key: String): Boolean
-        from_user(key: [String]): [Tequila]
-        from_provider(key: [String]): [Tequila]
-    }
+type Query {
+    tequila(key: [String]): [Tequila]
+    verify_tequila(key: String): Boolean
+    from_user(key: [String], order: Int): [Tequila]
+    from_provider(key: [String]): [Tequila]
+}
 `);
 
 const values = {
@@ -71,7 +72,7 @@ const values = {
     },
     from_user: async (args) => {
         var q = `{
-            tequila(key: ${JSON.stringify(args.key)}) {
+            tequila(key: ${JSON.stringify(args.key)}, order: ${args.order}) {
                 name
                 alcohol_degrees
                 purity
@@ -80,6 +81,7 @@ const values = {
                 year_of_distillation
                 place_of_distillation
                 uuid
+                url
             }
         }`
 

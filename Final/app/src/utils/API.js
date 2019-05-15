@@ -102,7 +102,7 @@ class API {
           console.log('MY USER IS HERE', user)
 
           var query = `{
-            from_user(key: ${JSON.stringify(user.tequilas.map(tequila => tequila.serial_num))}) {
+            from_user(key: ${JSON.stringify(user.tequilas.map(tequila => tequila.serial_num))}, order: ${+sort}) {
               name
               distillation
               year_of_distillation
@@ -111,6 +111,7 @@ class API {
               date_of_release
               place_of_distillation
               uuid
+              url
             }
           }`
 

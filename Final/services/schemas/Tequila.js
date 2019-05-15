@@ -11,5 +11,6 @@ type Tequila {
     uuid: String
     provider: String
     provider_uuid: String
+    url: String
 }
 `;
