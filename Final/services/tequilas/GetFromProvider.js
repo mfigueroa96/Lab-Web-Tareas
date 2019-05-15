@@ -1,28 +1,49 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios').default;
+const firebase = require('firebase-admin');
 const { buildSchema } = require('graphql');
 const express_graphql = require('express-graphql');
 const config = require('../config');
 const Tequila = require('../models/Tequila');
+const tequilaSchema = require('../schemas/Tequila');
+const serviceAccount = require('../ServiceKey.json');
 
 const app = express();
 app.use(cors({ origin: '*' }));
 
+firebase.initializeApp({
+    credential: firebase.credential.cert(serviceAccount),
+    databaseURL: 'https://labweb-239421.firebaseio.com'
+});
+
+const db = firebase.database();
+const tequilasRef = db.ref('tequilas');
+
 const schema = buildSchema(`
+    ${tequilaSchema}
+
     type Query {
-        verify(key: String): Boolean
+        tequila(key: [String]): [Tequila]
     }
 `);
 
 const values = {
     tequila: async (args) => {
-        var q = `{
-            info(key: ${args.key})
-        }`
-
-        var res = await axios.get(`http://localhost:${config.ports.tequilasGetInfo}/graphql?query=${q}`)
-        return res.data
+        var keys = [...args.key];
+        // console.log('TEQUILA_FROM_USER_ARGS', args);
+        return tequilasRef.once('value').then(snapshot => {
+            var tequilas = snapshot.val();
+            var response = []
+            for (const tequilaKey in tequilas) {
+                if (keys.includes(tequilaKey)) {
+                    var temp = {...tequilas[tequilaKey]};
+                    temp.uuid = tequilaKey;
+                    response.push(temp);
+                }
+            }
+            
+            return response
+        })
     }
 }
 

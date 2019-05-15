@@ -37,11 +37,42 @@ class API {
   }
 
   getProviderInfo(id) {
-    axios.get(`${constants.API}/provider/`+id)
+    var query = `{
+      get_info(key: ${JSON.stringify(id)}) {
+        brand
+        contact_mail
+        contact_phone
+        tequilas
+        uuid
+      }
+    }`
+
+    console.log(query);
+
+    axios.get(`${constants.API_PROVIDER}?query=${query}`)
       .then(response => {
-        if (response.data.my_provider != null) {
+        if (response.data.data.get_info != null) {
+          var provider = response.data.data.get_info;
+
+          query = `{
+            from_provider(key: ${JSON.stringify(provider.tequilas)}) {
+              name
+              distillation
+              year_of_distillation
+              alcohol_degrees
+              purity
+              date_of_release
+              place_of_distillation
+              uuid
+            }
+          }`
+
+          axios.get(`${constants.API_TEQUILA}?query=${query}`)
+          .then(response => {
             console.log(response.data);
-            ServerActions.receiveProviderInfo(response.data.my_provider);
+            provider.tequilas = response.data.data.from_provider;
+            ServerActions.receiveProviderInfo(provider);
+          })
         }
         else {
           ServerActions.receiveProviderInfo({"uuid": constants.PROVIDER_NOT_FOUND});
@@ -55,15 +86,40 @@ class API {
         name
         lastName
         email
+        tequilas {
+          serial_num
+          date_of_purchase
+        }
       }
     }`
 
     axios.get(`${constants.API_USER}?query=${query}`)
       .then(response => {
         response = response.data;
+        console.log(response);
         if (response.data.user[0] != null) {
-            console.log(response.data);
-            ServerActions.receiveUserHistory(response.data.user[0]);
+          var user = response.data.user[0];
+          console.log('MY USER IS HERE', user)
+
+          var query = `{
+            from_user(key: ${JSON.stringify(user.tequilas.map(tequila => tequila.serial_num))}) {
+              name
+              distillation
+              year_of_distillation
+              alcohol_degrees
+              purity
+              date_of_release
+              place_of_distillation
+              uuid
+            }
+          }`
+
+          axios.get(`${constants.API_TEQUILA}?query=${query}`)
+          .then(response => {
+            user.history = response.data.data.from_user;
+            console.log(user);
+            ServerActions.receiveUserHistory(user);
+          })
         }
         else {
           ServerActions.receiveUserHistory({"user_exists": constants.USER_NOT_FOUND});

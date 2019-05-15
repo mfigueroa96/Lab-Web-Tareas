@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./access/API.js\" \"node ./tequilas/GetInfo.js\" \"node ./users/GetInfo.js\" \"node ./providers/GetInfo.js\" \"node ./users/AddTequila.js\" \"node ./users/queue.js\""
+    "start": "concurrently \"node ./users/API.js\" \"node ./tequilas/API.js\" \"node ./providers/API.js\" \"node ./tequilas/GetInfo.js\" \"node ./users/GetInfo.js\" \"node ./providers/GetInfo.js\" \"node ./users/AddTequila.js\" \"node ./users/queue.js\" \"node ./tequilas/GetFromUser.js\" \"node ./tequilas/GetFromProvider.js\""
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,7 +20,6 @@
     "firebase": "^6.0.2",
     "firebase-admin": "^7.3.0",
     "firebase-queue": "^1.6.1",
-    "graphql": "^14.3.0",
-    "axios": "^0.18.0"
+    "graphql": "^14.3.0"
   }
 }
