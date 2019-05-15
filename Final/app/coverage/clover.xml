@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1557881046173" clover="3.2.0">
-  <project timestamp="1557881046173" name="All files">
-    <metrics statements="288" coveredstatements="5" conditionals="81" coveredconditionals="2" methods="78" coveredmethods="3" elements="447" coveredelements="10" complexity="0" loc="288" ncloc="288" packages="6" files="19" classes="19">
+<coverage generated="1557882662215" clover="3.2.0">
+  <project timestamp="1557882662216" name="All files">
+    <metrics statements="283" coveredstatements="5" conditionals="77" coveredconditionals="2" methods="78" coveredmethods="3" elements="438" coveredelements="10" complexity="0" loc="283" ncloc="283" packages="6" files="19" classes="19">
       <package name="src">
         <metrics statements="57" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="17" coveredmethods="0"/>
         <file name="App.js" path="/Users/charlhye/Documents/GitHub/Lab-Web-Tareas/Final/app/src/App.js">
@@ -333,36 +333,31 @@
         </file>
       </package>
       <package name="src.utils">
-        <metrics statements="27" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <metrics statements="22" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <file name="API.js" path="/Users/charlhye/Documents/GitHub/Lab-Web-Tareas/Final/app/src/utils/API.js">
-          <metrics statements="27" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="9" coveredmethods="0"/>
+          <metrics statements="22" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
           <line num="3" count="0" type="stmt"/>
           <line num="4" count="0" type="stmt"/>
           <line num="5" count="0" type="stmt"/>
           <line num="10" count="0" type="stmt"/>
           <line num="13" count="0" type="stmt"/>
-          <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="16" count="0" type="stmt"/>
-          <line num="17" count="0" type="stmt"/>
-          <line num="20" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
-          <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="29" count="0" type="stmt"/>
-          <line num="30" count="0" type="stmt"/>
-          <line num="33" count="0" type="stmt"/>
-          <line num="39" count="0" type="stmt"/>
-          <line num="47" count="0" type="stmt"/>
-          <line num="49" count="0" type="stmt"/>
-          <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
           <line num="51" count="0" type="stmt"/>
-          <line num="52" count="0" type="stmt"/>
-          <line num="55" count="0" type="stmt"/>
-          <line num="62" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="62" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="63" count="0" type="stmt"/>
           <line num="64" count="0" type="stmt"/>
-          <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="66" count="0" type="stmt"/>
           <line num="67" count="0" type="stmt"/>
-          <line num="70" count="0" type="stmt"/>
+          <line num="74" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
         </file>
       </package>
     </metrics>
