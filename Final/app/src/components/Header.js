@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import ReactDOM from "react-dom";
+import App from "../App";
+import $ from "jquery";
+import ReactTestUtils from 'react-test-utils';
 
 export default class Header extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             goto: false,
             tequila_key: ''
         };
+
     }
 
-    tequilaInput_KeyUp = (e) => {
+    perform
+
+    tequilaInput_KeyUp = function (e) {
         if (e.keyCode == 13) {
             if (document.getElementById('tequila-serial-num').value.length < 32) {
                 e.preventDefault();

@@ -6,10 +6,10 @@ export default class SectionHeader extends Component {
     render() {
         return <div className='tequila-header'>
             <div style={{display: 'flex', alignItems: 'center'}}>
-                <Link to='/'>
+                <a href='/'>
                     <img src='/assets/back.png' />
                     Regresar al inicio
-                </Link>
+                </a>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
                 <img id='tequila-icon-2' src='/assets/tequila-icon-2.png' />

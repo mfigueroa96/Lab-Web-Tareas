@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">9.09% </span>
+        <span class="strong">72.73% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/11</span>
+        <span class='fraction'>8/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/5</span>
+        <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">9.09% </span>
+        <span class="strong">72.73% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/11</span>
+        <span class='fraction'>8/11</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -114,7 +114,10 @@
 69
 70
 71
-72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+72
+73
+74
+75</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,16 +131,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,16 +147,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,20 +202,17 @@ export default class Home extends Component {
     state = {
         access: false,
         username: ''
-    }
+    };
 &nbsp;
-    accessBtn_Click = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
-<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
-        var username = <span class="cstat-no" title="statement not covered" >document.querySelector('#login-username').value;</span>
-        var password = <span class="cstat-no" title="statement not covered" >document.querySelector('#login-password').value;</span>
-<span class="cstat-no" title="statement not covered" >        console.log(username, password);</span>
-<span class="cstat-no" title="statement not covered" >        firebase.auth().signInWithEmailAndPassword(username, password).then(<span class="fstat-no" title="function not covered" >us</span>er =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            return firebase.auth().currentUser.getIdToken(true).then(<span class="fstat-no" title="function not covered" >to</span>ken =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                document.cookie = '__session=' + token + ';max-age=600';</span>
-<span class="cstat-no" title="statement not covered" >                localStorage.setItem('user', firebase.auth().currentUser.uid);</span>
+    performSignIn = async (username, password) =&gt; {
+        console.log(username, password);
+        await firebase.auth().signInWithEmailAndPassword(username, password).then(async username =&gt; {
+            await firebase.auth().currentUser.getIdToken(true).then(token =&gt; {
+                document.cookie = '__session=' + token + ';max-age=600';
+                localStorage.setItem('user', firebase.auth().currentUser.uid);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                this.setState({</span>
-                    username: document.getElementById('login-username').value,
+                this.setState({
+                    username: username,
                     access: true
                 })
             })
@@ -220,12 +223,18 @@ export default class Home extends Component {
             // })
 &nbsp;
             // localStorage.setItem('firebase-user', firebase.auth().currentUser.uid);
-            
-        }).catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
-<span class="cstat-no" title="statement not covered" >            console.log(err);</span>
-        })
 &nbsp;
-    }
+        }).catch(err =&gt; {
+            console.log(err);
+        });
+    };
+&nbsp;
+    accessBtn_Click = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+        var username = <span class="cstat-no" title="statement not covered" >document.querySelector('#login-username').value;</span>
+        var password = <span class="cstat-no" title="statement not covered" >document.querySelector('#login-password').value;</span>
+<span class="cstat-no" title="statement not covered" >        this.performSignIn(username, password);</span>
+&nbsp;
+    };
     render() {
         return !this.state.access ? (
             &lt;div&gt;
@@ -242,7 +251,7 @@ export default class Home extends Component {
                             &lt;p&gt;Contraseña&lt;/p&gt;
                             &lt;Input fullWidth={true} id='login-password' placeholder='123456' type='password' /&gt;
                         &lt;/div&gt;
-                        &lt;button onClick={this.accessBtn_Click} id='access-btn'&gt;Acceder a tu cuenta&lt;/button&gt;
+                        &lt;button type='button' onClick={this.accessBtn_Click} id='access-btn'&gt;Acceder a tu cuenta&lt;/button&gt;
                     &lt;/form&gt;
                 &lt;/div&gt;
                 &lt;div className='providers-list'&gt;
@@ -254,7 +263,7 @@ export default class Home extends Component {
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;/div&gt;
-        ) : <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Redirect to={'/user/' + localStorage.getItem('user')} /&gt;</span>
+        ) : &lt;Redirect to={'/user/' + localStorage.getItem('user')} /&gt;
     }
 }</pre></td></tr>
 </table></pre>
@@ -262,7 +271,7 @@ export default class Home extends Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:35:43 GMT-0500 (Central Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

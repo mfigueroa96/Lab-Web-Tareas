@@ -13,12 +13,12 @@ export default class Result extends Component {
             <Grid item lg={4} md={4} sm={6} xs={12} className="result-item">
                 <div className="result-item-wrap">
                     <div className="result-item-degrees">
-                        <Link to={'/tequila/' + this.props.element.my_serial}>
+                        <a href={'/tequila/' + this.props.element.my_serial}>
                             {this.props.element.name}
-                        </Link>
+                        </a>
                     </div>
                     <div className="result-item-condition">{this.props.element.alcohol_degrees}</div>
-                    <div className="result-item-condition">{this.props.element.date_of_releas}</div>
+                    <div className="result-item-condition">{this.props.element.date_of_release}</div>
                     <div className="result-item-condition">{this.props.element.date_of_purchase}</div>
                     <div className="result-item-condition">{this.props.element.brand}</div>
                     <div className="result-item-condition">{this.props.element.place_of_distillation}</div>

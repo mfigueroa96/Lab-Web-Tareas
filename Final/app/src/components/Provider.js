@@ -22,23 +22,19 @@ export default class Provider extends Component {
 
     _onChange = () => {
         this.setState({listProvider: TodoStore.getListProvider()});
-        console.log(this.state)
     }
 
 
     render() {
         var rows = [];
         var data = this.state.listProvider.provider
-        var data2 = data.tequilas
+        var data2 = data.tequilas;
         var img = data.uuid!==undefined ? data.uuid.split('-').join(''): ""
 
         if(data2 != undefined && data2.length > 0){
             data2.forEach((item, i) => {
-                console.log(item)
-            rows.push(<ResultProviderTequila key={i} element={item}></ResultProviderTequila>);
+                rows.push(<ResultProviderTequila key={i} element={item}></ResultProviderTequila>);
             });
-        console.log("Esto es rows:")
-        console.log(data2);
         }
         return (
           <div className='provider-section'>

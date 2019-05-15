@@ -9,20 +9,17 @@ export default class Home extends Component {
     state = {
         access: false,
         username: ''
-    }
+    };
 
-    accessBtn_Click = (e) => {
-        e.preventDefault();
-        var username = document.querySelector('#login-username').value;
-        var password = document.querySelector('#login-password').value;
+    performSignIn = async (username, password) => {
         console.log(username, password);
-        firebase.auth().signInWithEmailAndPassword(username, password).then(user => {
-            return firebase.auth().currentUser.getIdToken(true).then(token => {
+        await firebase.auth().signInWithEmailAndPassword(username, password).then(async username => {
+            await firebase.auth().currentUser.getIdToken(true).then(token => {
                 document.cookie = '__session=' + token + ';max-age=600';
                 localStorage.setItem('user', firebase.auth().currentUser.uid);
 
                 this.setState({
-                    username: document.getElementById('login-username').value,
+                    username: username,
                     access: true
                 })
             })
@@ -33,12 +30,18 @@ export default class Home extends Component {
             // })
 
             // localStorage.setItem('firebase-user', firebase.auth().currentUser.uid);
-            
+
         }).catch(err => {
             console.log(err);
-        })
+        });
+    };
 
-    }
+    accessBtn_Click = (e) => {
+        var username = document.querySelector('#login-username').value;
+        var password = document.querySelector('#login-password').value;
+        this.performSignIn(username, password);
+
+    };
     render() {
         return !this.state.access ? (
             <div>
@@ -55,7 +58,7 @@ export default class Home extends Component {
                             <p>Contraseña</p>
                             <Input fullWidth={true} id='login-password' placeholder='123456' type='password' />
                         </div>
-                        <button onClick={this.accessBtn_Click} id='access-btn'>Acceder a tu cuenta</button>
+                        <button type='button' onClick={this.accessBtn_Click} id='access-btn'>Acceder a tu cuenta</button>
                     </form>
                 </div>
                 <div className='providers-list'>

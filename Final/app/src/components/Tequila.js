@@ -82,10 +82,10 @@ export default class Tequila extends Component {
                     </Grid>
                 </Grid>
                 <div className='goto-provider'>
-                    <Link to={`/provider/${this.state.listTequila.tequila.brand}`}>
+                    <a href={`/provider/${this.state.listTequila.tequila.brand}`}>
                         Este artículo fue registrado y verificado por
                         <img src={`/assets/provider/${provider_img}.png`} />
-                    </Link>
+                    </a>
                 </div>
             </div>
         : <NotFound />

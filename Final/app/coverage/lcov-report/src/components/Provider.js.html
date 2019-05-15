@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/25</span>
+        <span class='fraction'>0/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/25</span>
+        <span class='fraction'>0/16</span>
       </div>
     </div>
   </div>
@@ -111,25 +111,20 @@
 66
 67
 68
-69</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+69</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,6 +134,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -179,35 +179,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { Component } from 'react';</span>
-<span class="cstat-no" title="statement not covered" >import { Redirect } from 'react-router-dom';</span>
-<span class="cstat-no" title="statement not covered" >import TodoStore from "../stores/Store";</span>
-<span class="cstat-no" title="statement not covered" >import TodoActions from "../actions/Action";</span>
-<span class="cstat-no" title="statement not covered" >import '../styles/Provider.scss';</span>
-<span class="cstat-no" title="statement not covered" >import { Grid } from '@material-ui/core';</span>
-<span class="cstat-no" title="statement not covered" >import SectionHeader from './SectionHeader';</span>
-<span class="cstat-no" title="statement not covered" >import ResultProviderTequila from "../components/ResultProviderTequila"</span>
-export default class Provider extends Component <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import TodoStore from "../stores/Store";
+import TodoActions from "../actions/Action";
+import '../styles/Provider.scss';
+import { Grid } from '@material-ui/core';
+import SectionHeader from './SectionHeader';
+import ResultProviderTequila from "../components/ResultProviderTequila"
+export default class Provider extends Component {
     state = {
         listProvider: TodoStore.getListProvider(),
     }
 &nbsp;
-    getInitialState =<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+    getInitialState =<span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >        this.setState({listTequila: TodoActions.getProviderInfo(this.props.match.params.providerKey) });</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentDidMount</span>() {
+<span class="fstat-no" title="function not covered" >    co</span>mponentDidMount() {
 <span class="cstat-no" title="statement not covered" >        TodoStore.addChangeListener(this._onChange);</span>
 <span class="cstat-no" title="statement not covered" >        TodoActions.getProviderInfo(this.props.match.params.providerKey);</span>
     }
 &nbsp;
-    _onChange = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+    _onChange = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >        this.setState({listProvider: TodoStore.getListProvider()});</span>
 <span class="cstat-no" title="statement not covered" >        console.log(this.state)</span>
     }
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered" >    render</span>() {
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
         var rows = <span class="cstat-no" title="statement not covered" >[];</span>
         var data = <span class="cstat-no" title="statement not covered" >this.state.listProvider.provider</span>
         var data2 = <span class="cstat-no" title="statement not covered" >data.tequilas</span>
@@ -253,7 +253,7 @@ export default class Provider extends Component <span class="cstat-no" title="st
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:35:43 GMT-0500 (Central Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

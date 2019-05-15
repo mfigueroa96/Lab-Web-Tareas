@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>3/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>3/9</span>
       </div>
     </div>
   </div>
@@ -88,23 +88,14 @@
 43
 44
 45
-46
-47</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -120,12 +111,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,14 +135,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 // Todo actions
-<span class="cstat-no" title="statement not covered" >import constants from "../constants/Constants"</span>
-<span class="cstat-no" title="statement not covered" >import API from "../utils/API"</span>
-var AppDispatcher = <span class="cstat-no" title="statement not covered" >require('../dispatcher/AppDispatcher').default;</span>
+import constants from "../constants/Constants"
+import API from "../utils/API"
+var AppDispatcher = require('../dispatcher/AppDispatcher').default;
 //var API = require('../utils/API');
 &nbsp;
-class Action<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+class Action{
 &nbsp;
-  getTequilaInfo = (<span class="fstat-no" title="function not covered" >tequilakey) =&gt; {</span>
+  getTequilaInfo = <span class="fstat-no" title="function not covered" >(t</span>equilakey) =&gt; {
 <span class="cstat-no" title="statement not covered" >    AppDispatcher.handleViewAction({</span>
       actionType: constants.TEQUILA_INFO,
       tequila: tequilakey
@@ -152,7 +150,7 @@ class Action<span class="cstat-no" title="statement not covered" ><span class="f
     
 <span class="cstat-no" title="statement not covered" >    API.getTequilaInfo(tequilakey);</span>
   }
-<span class="fstat-no" title="function not covered" >  getProviderInfo</span>(providerkey) {
+<span class="fstat-no" title="function not covered" >  ge</span>tProviderInfo(providerkey) {
 <span class="cstat-no" title="statement not covered" >    AppDispatcher.handleViewAction({</span>
       actionType: constants.PROVIDER_INFO,
       tequila: providerkey
@@ -160,23 +158,22 @@ class Action<span class="cstat-no" title="statement not covered" ><span class="f
     
 <span class="cstat-no" title="statement not covered" >    API.getProviderInfo(providerkey);</span>
   }
-<span class="fstat-no" title="function not covered" >  getUserHistory</span>(userkey, sort) {
-<span class="cstat-no" title="statement not covered" >    AppDispatcher.handleViewAction({</span>
+  getUserHistory(userkey, sort) {
+    AppDispatcher.handleViewAction({
       actionType: constants.USER_HISTORY,
       tequila: userkey,
       sort: sort
     });
     
-<span class="cstat-no" title="statement not covered" >    API.getUserHistory(userkey, sort);</span>
+    API.getUserHistory(userkey, sort);
   }
-<span class="fstat-no" title="function not covered" >  addTequilaToUser</span>(useruid,tequilakey) {
+<span class="fstat-no" title="function not covered" >  ad</span>dTequilaToUser(useruid,tequilakey) {
 <span class="cstat-no" title="statement not covered" >    AppDispatcher.handleViewAction({</span>
       actionType: constants.USER_HISTORY,
       user: useruid,
       tequila: tequilakey
     });
-    
-<span class="cstat-no" title="statement not covered" >    API.addTequilaToUser(tequilakey);</span>
+<span class="cstat-no" title="statement not covered" >    API.addTequilaToUser(useruid,tequilakey);</span>
   }
 &nbsp;
 }
@@ -187,7 +184,7 @@ export default new Action();</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:35:43 GMT-0500 (Central Daylight Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

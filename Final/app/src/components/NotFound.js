@@ -19,7 +19,7 @@ export default class NotFound extends Component {
                 <img src='/assets/tequila-icon.png' />
                 <h1>Oops! Algo anda mal con este tequila...</h1>
                 <h2>No se encontró información para el número de serie ingresado.</h2>
-                <Link to='/'>Ir al inicio</Link>
+                <a href='/'>Ir al inicio</a>
             </div>
         </div>
     }

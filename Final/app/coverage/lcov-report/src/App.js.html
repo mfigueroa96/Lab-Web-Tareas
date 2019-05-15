@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/13</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/13</span>
+        <span class='fraction'>5/5</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -77,18 +77,8 @@
 32
 33
 34
-35</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+35
+36</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,31 +88,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { Component } from 'react';</span>
-<span class="cstat-no" title="statement not covered" >import { BrowserRouter as Router, Route } from 'react-router-dom';</span>
-<span class="cstat-no" title="statement not covered" >import firebase from 'firebase';</span>
-<span class="cstat-no" title="statement not covered" >import Tequila from './components/Tequila';</span>
-<span class="cstat-no" title="statement not covered" >import Provider from './components/Provider';</span>
-<span class="cstat-no" title="statement not covered" >import Home from './components/Home';</span>
-<span class="cstat-no" title="statement not covered" >import './App.css';</span>
-<span class="cstat-no" title="statement not covered" >import UserHistory from './components/UserHistory'</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import firebase from 'firebase';
+import Tequila from './components/Tequila';
+import Provider from './components/Provider';
+import Home from './components/Home';
+import './App.css';
+import UserHistory from './components/UserHistory'
+&nbsp;
 &nbsp;
 export default class App extends Component {
-<span class="fstat-no" title="function not covered" >    componentWillMount</span>() {
-        var config = <span class="cstat-no" title="statement not covered" >{</span>
+    componentWillMount() {
+        var config = {
             apiKey: "AIzaSyDnt_wEFS56XBct5cxhRE-wh9iJ1kvkMtY",
             authDomain: "labweb-239421.firebaseapp.com",
             databaseURL: "https://labweb-239421.firebaseio.com",
@@ -132,13 +135,13 @@ export default class App extends Component {
             appId: "1:19237448659:web:a7e55125ce9cf96a"
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        firebase.initializeApp(config);</span>
-<span class="cstat-no" title="statement not covered" >        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);</span>
-<span class="cstat-no" title="statement not covered" >        console.log('AOK');</span>
+        firebase.initializeApp(config);
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+        console.log('AOK');
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    render</span>() {
-<span class="cstat-no" title="statement not covered" >        return &lt;Router&gt;</span>
+    render() {
+        return &lt;Router&gt;
             &lt;Route exact path='/' component={Home} /&gt;
             &lt;Route exact path='/tequila/:tequilaKey' component={Tequila} /&gt;
             &lt;Route exact path='/provider/:providerKey' component={Provider} /&gt;
@@ -151,7 +154,7 @@ export default class App extends Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue May 14 2019 20:11:02 GMT-0500 (Central Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 15 2019 14:35:43 GMT-0500 (Central Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>
