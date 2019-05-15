@@ -22,12 +22,29 @@ export default class Tequila extends Component {
 
     componentDidMount() {
         TodoStore.addChangeListener(this._onChange);
-        TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
+        //TodoActions.getTequilaInfo(this.props.match.params.tequilaKey);
 
         if (this.getCookie('__session').length != 0) {
             this.setState({user: true});
+            console.log(this.props.match.params.tequilaKey)
             TodoActions.addTequilaToUser(localStorage.getItem('user'),this.props.match.params.tequilaKey);
         }
+    }
+
+    getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
     }
 
     _onChange = () => {

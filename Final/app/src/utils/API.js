@@ -49,7 +49,7 @@ class API {
 
   getUserHistory(id, sort) {
     var query = `{
-      user(key: ["${id}"]) {
+      user(key: "${id}") {
         name
         lastName
         email
@@ -70,11 +70,17 @@ class API {
   }
 
   addTequilaToUser(useruid, tequikey) {
-
-    axios.get(`${constants.API_USERTEQUILA}/${useruid}/${tequikey}`)
+    var query = `{
+      addTequila(uid: "${useruid}", key: "${tequikey}")
+    }`
+    axios.get(`${constants.API_USER}/api?query=${query}`)
       .then(response => {
         response = response.data;
-        console.log(response)
+        if(response.data.addTequila){
+          ServerActions.addTequilaToUser({"added":true})
+        }else{
+          ServerActions.addTequilaToUser({"added":false})
+        }
     });
   }
 }
