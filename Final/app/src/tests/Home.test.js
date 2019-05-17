@@ -35,7 +35,22 @@ describe('Home', function() {
     it('Acessing states', async () => {
         const wrapper = mount(<App/>).find(Home);
 
+        //Inco pass
         var username = "luisjuancenturion@gmail.com";
+        var password = "appe<3";
+
+        await wrapper.instance().performSignIn(username, password);
+        expect(wrapper.state('access')).toEqual(false);
+
+        //Not registered
+        var username = "luisjuancenturon@gmail.com";
+        var password = "appe<3";
+
+        await wrapper.instance().performSignIn(username, password);
+        expect(wrapper.state('access')).toEqual(false);
+
+        //Wron user
+        var username = "luisjuancenturion";
         var password = "appe<3";
 
         await wrapper.instance().performSignIn(username, password);

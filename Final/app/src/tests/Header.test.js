@@ -3,10 +3,12 @@ import React from "react";
 import Home from "../components/Home";
 import { shallow, mount } from "enzyme";
 import { configure } from 'enzyme/build';
-import Adapter from 'enzyme-adapter-react-16/build';
+
 import {Input} from "@material-ui/core";
 import UserHistory from "../components/UserHistory";
 import Header from "../components/Header";
+
+import Adapter from 'enzyme-adapter-react-16/build';
 configure({ adapter: new Adapter() });
 
 describe('Header', function() {

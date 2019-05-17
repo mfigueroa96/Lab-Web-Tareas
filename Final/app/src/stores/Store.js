@@ -61,11 +61,9 @@ var TodoStore = ObjectAssign( {}, EventEmitter.prototype, {
 AppDispatcher.register(function(payload) {
 
   var action = payload.action;
-  console.log(action)
   switch(action.actionType) {
     
     case AppConstants.GET_TEQUIINFO_RESPONSE:
-    console.log(action.response);
       // Construct the new todo string
       var newTodo = action.response;
 
@@ -80,7 +78,6 @@ AppDispatcher.register(function(payload) {
     case AppConstants.GET_PROVIDER_RESPONSE:
       var newTodoP =  action.response;
       _storeP.provider = newTodoP
-      console.log(newTodoP)
       if(newTodoP.uuid != AppConstants.PROVIDER_NOT_FOUND){
         _storeP.exist = true
       }else{
@@ -91,7 +88,6 @@ AppDispatcher.register(function(payload) {
       break;
     case AppConstants.GET_USER_RESPONSE:
       var newTodoU =  action.response;
-      console.log(newTodoU)
       _storeU.list = newTodoU
       // if(newTodoU.length){
       //  _storeU.list = newTodoU

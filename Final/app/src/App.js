@@ -22,7 +22,6 @@ export default class App extends Component {
 
         firebase.initializeApp(config);
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
-        console.log('AOK');
     }
 
     render() {

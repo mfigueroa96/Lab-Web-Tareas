@@ -26,7 +26,6 @@ export default class Tequila extends Component {
 
         if (this.getCookie('__session').length != 0) {
             this.setState({user: true});
-            console.log(this.props.match.params.tequilaKey)
             TodoActions.addTequilaToUser(localStorage.getItem('user'),this.props.match.params.tequilaKey);
         }
     }
@@ -49,7 +48,6 @@ export default class Tequila extends Component {
 
     _onChange = () => {
         this.setState({listTequila: TodoStore.getListTequila()});
-        console.log(this.state)
     }
     
 

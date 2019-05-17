@@ -12,7 +12,6 @@ export default class Home extends Component {
     };
 
     performSignIn = async (username, password) => {
-        console.log(username, password);
         await firebase.auth().signInWithEmailAndPassword(username, password).then(async username => {
             await firebase.auth().currentUser.getIdToken(true).then(token => {
                 document.cookie = '__session=' + token + ';max-age=600';
@@ -25,16 +24,15 @@ export default class Home extends Component {
             })
 
         }).catch(err => {
-            console.log(err);
             switch(err.code){
                 case 'auth/invalid-email':
-                    alert("Usuario inválido");
+                    window.alert("Usuario inválido");
                     break;
                 case 'auth/user-not-found':
-                    alert("Usuario no encontrado");
+                    window.alert("Usuario no encontrado");
                     break;
                 case 'auth/wrong-password':
-                    alert("Contraseña incorrecta");
+                    window.alert("Contraseña incorrecta");
                     break;
             }
 

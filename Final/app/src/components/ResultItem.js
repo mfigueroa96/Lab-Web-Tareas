@@ -6,7 +6,6 @@ import '../styles/ResultItem.scss';
 export default class Result extends Component {
     
     render() {
-        console.log(this.props.element)
         var img = this.props.element.uuid.split('-').join('')
 
         return (

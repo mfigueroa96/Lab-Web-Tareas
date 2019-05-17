@@ -26,7 +26,6 @@ class API {
     }`
     axios.get(`${constants.API_TEQUILA}?query=${query}`)
       .then(response => {
-        console.log(response.data.data.tequila[0])
         if (response.data.data.tequila[0].name != "0") {
             ServerActions.receiveTequilaInfo(response.data.data.tequila[0]);
         }
@@ -47,7 +46,6 @@ class API {
       }
     }`
 
-    console.log(query);
 
     axios.get(`${constants.API_PROVIDER}?query=${query}`)
       .then(response => {
@@ -69,7 +67,6 @@ class API {
 
           axios.get(`${constants.API_TEQUILA}?query=${query}`)
           .then(response => {
-            console.log(response.data);
             provider.tequilas = response.data.data.from_provider;
             ServerActions.receiveProviderInfo(provider);
           })
@@ -96,7 +93,6 @@ class API {
     axios.get(`${constants.API_USER}?query=${query}`)
       .then(response => {
         response = response.data;
-        console.log(response);
         if (response.data.user[0] != null) {
           var user = response.data.user[0];
           console.log('MY USER IS HERE', user)
@@ -118,7 +114,6 @@ class API {
           axios.get(`${constants.API_TEQUILA}?query=${query}`)
           .then(response => {
             user.history = response.data.data.from_user;
-            console.log(user);
             ServerActions.receiveUserHistory(user);
           })
         }
